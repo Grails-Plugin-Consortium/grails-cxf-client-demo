@@ -55,12 +55,18 @@ grails.exceptionresolver.params.exclude = ['password']
 environments {
     production {
         grails.serverURL = "http://www.changeme.com"
+        service.simple.url = "${grails.serverURL}/services/simple"
+        service.complex.url = "${grails.serverURL}/services/complex"
     }
     development {
         grails.serverURL = "http://localhost:8080/${appName}"
+        service.simple.url = "${grails.serverURL}/services/simple"
+        service.complex.url = "${grails.serverURL}/services/complex"
     }
     test {
         grails.serverURL = "http://localhost:8080/${appName}"
+        service.simple.url = "${grails.serverURL}/services/simple"
+        service.complex.url = "${grails.serverURL}/services/complex"
     }
 
 }

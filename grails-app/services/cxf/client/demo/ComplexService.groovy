@@ -1,11 +1,16 @@
 package cxf.client.demo
 
+import com.cxf.demo.ComplexResponse
+import com.cxf.demo.ComplexRequest
+import com.cxf.demo.ComplexChild
+
 class ComplexService {
 
     static expose = ['cxf']
 
     ComplexResponse complexMethod1(ComplexRequest request) {
         ComplexResponse response = new ComplexResponse()
+        response.children = []
         request?.propagateCount?.times {
             response.children << new ComplexChild(name: "Child$it")
         }
@@ -16,6 +21,7 @@ class ComplexService {
 
     ComplexResponse complexMethod2(ComplexRequest request) {
         ComplexResponse response = new ComplexResponse()
+        response.children = []
         request?.propagateCount?.times {
             response.children << new ComplexChild(name: "Child$it")
         }
