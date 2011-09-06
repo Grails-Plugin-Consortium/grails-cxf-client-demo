@@ -58,7 +58,7 @@ grails.exceptionresolver.params.exclude = ['password']
 service.simple.url = ""
 service.complex.url = ""
 
-// set per-environment serverURL stem for creating absolute links
+// set per-environment service url
 environments {
     production {
         grails.serverURL = "http://www.changeme.com"
@@ -75,7 +75,6 @@ environments {
         service.simple.url = "${grails.serverURL}/services/simple"
         service.complex.url = "${grails.serverURL}/services/complex"
     }
-
 }
 
 // log4j configuration
@@ -113,7 +112,7 @@ cxf {
 
         complexServiceClient {
             clientInterface = cxf.client.demo.complex.ComplexServicePortType
-            serviceEndpointAddress = "${service.simple.url}"
+            serviceEndpointAddress = "${service.complex.url}"
         }
     }
 }

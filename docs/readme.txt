@@ -19,7 +19,6 @@ Put the jar into your project's lib dir (and generate any more jars you need).  
 
 These could be put in the same jar since the namespace I am using is different cxf.client.demo.complex and cxf.client.demo.simple.
 
-
 NOTES:
    I am using the full path for objects in controller since I have source for original objects here
    which are named the same as the jaxb objects except the namespace.
