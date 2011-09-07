@@ -13,7 +13,7 @@ class FunctionalSpec extends GebSpec {
     }
 
     @Ignore("This works only when running locally, not on build server?!")
-    def "do some test"() {
+    def "test simple service page"() {
         when:
         to SimplePage
 
