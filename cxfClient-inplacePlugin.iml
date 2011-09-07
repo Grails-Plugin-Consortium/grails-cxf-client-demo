@@ -1,18 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="Grails" name="Grails" removed="false">
+          <file>file://$MODULE_DIR$/../cxf-client/web-app/WEB-INF/applicationContext.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
+    <facet type="web" name="GrailsWeb">
+      <configuration>
+        <webroots>
+          <root url="file://$MODULE_DIR$/../cxf-client/web-app" relative="/" />
+          <root url="file://$MODULE_DIR$/../cxf-client/grails-app/views" relative="/" />
+        </webroots>
+        <sourceRoots />
+      </configuration>
+    </facet>
+  </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$/lib/cxf-client-0.2.zip">
-      <excludeFolder url="file://$MODULE_DIR$/grails-cxf-client-0.2.zip/target/classes" />
-      <excludeFolder url="file://$MODULE_DIR$/grails-cxf-client-0.2.zip/target/test-classes" />
-      <excludeFolder url="file://$MODULE_DIR$/grails-cxf-client-0.2.zip/web-app/plugins" />
+    <content url="file://$MODULE_DIR$/../cxf-client">
+      <sourceFolder url="file://$MODULE_DIR$/../cxf-client/src/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../cxf-client/grails-app/utils" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../cxf-client/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../cxf-client/grails-app/controllers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../cxf-client/grails-app/domain" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../cxf-client/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../cxf-client/grails-app/taglib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../cxf-client/test/unit" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../cxf-client/test/integration" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/../cxf-client/target/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../cxf-client/target/test-classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../cxf-client/web-app/plugins" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="cxf-client-demo-grailsPlugins" />
     <orderEntry type="library" scope="PROVIDED" name="grails-1.3.7" level="application" />
     <orderEntry type="module-library">
       <library name="Grails User Library (cxfClient-inplacePlugin)">
         <CLASSES>
+          <root url="file://$MODULE_DIR$/../cxf-client/lib" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.codehaus.jettison/jettison/bundles/jettison-1.2.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.cxf/cxf-rt-databinding-aegis/jars/cxf-rt-databinding-aegis-2.3.0.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/javax.ws.rs/jsr311-api/jars/jsr311-api-1.1.1.jar!/" />
@@ -39,9 +68,24 @@
           <root url="jar://$USER_HOME$/.ivy2/cache/asm/asm/jars/asm-3.3.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/xml-resolver/xml-resolver/jars/xml-resolver-1.2.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.cxf/cxf-rt-frontend-jaxws/jars/cxf-rt-frontend-jaxws-2.3.0.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.bouncycastle/bcprov-jdk15/jars/bcprov-jdk15-1.43.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/xalan/xalan/jars/xalan-2.7.1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.cxf/cxf-rt-ws-security/jars/cxf-rt-ws-security-2.3.0.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/joda-time/joda-time/jars/joda-time-1.6.2.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.6.1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.opensaml/xmltooling/jars/xmltooling-1.3.1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.opensaml/openws/jars/openws-1.4.1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.opensaml/opensaml/jars/opensaml-2.4.1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.santuario/xmlsec/bundles/xmlsec-1.4.5.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.ws.security/wss4j/bundles/wss4j-1.6.2.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.hamcrest/hamcrest-core/jars/hamcrest-core-1.2.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/junit/junit-dep/jars/junit-dep-4.8.2.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.spockframework/spock-core/jars/spock-core-0.5-groovy-1.7.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.spockframework/spock-grails-support/jars/spock-grails-support-0.5-groovy-1.7.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/../cxf-client/lib" recursive="false" />
       </library>
     </orderEntry>
   </component>
