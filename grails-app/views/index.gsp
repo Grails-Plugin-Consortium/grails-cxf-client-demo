@@ -34,10 +34,10 @@
         <span style="font-weight: bold;">Search Results</span><BR>
         <g:if test="${simpleRequest1}">
           <BR><BR>
-          <span style="font-weight: bold;">Request 1 Name:</span> ${simpleRequest1?.name}<BR>
+          <span style="font-weight: bold;">Request 1 Name:</span> <span class="name">${simpleRequest1?.name}</span><BR>
           <span style="font-weight: bold;">Request 1 Age:</span> ${simpleRequest1?.age}<BR>
-          <span style="font-weight: bold;">Response 1 Is Old:</span> ${simpleResponse1?.isOld}<br>
-          <span style="font-weight: bold;">Response 1 Status:</span> ${simpleResponse1?.status}<br>
+          <span style="font-weight: bold;">Response 1 Is Old:</span> <span class="isOld">${simpleResponse1?.isOld}</span><br>
+          <span style="font-weight: bold;">Response 1 Status:</span> <span class="status">${simpleResponse1?.status}</span><br>
         </g:if>
         <g:if test="${simpleRequest2}">
           <BR><BR>
