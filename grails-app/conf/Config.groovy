@@ -59,6 +59,9 @@ service.simple.url = ""
 service.complex.url = ""
 
 // set per-environment service url
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// port is set to 9090 for test use -Dserver.port=9090 during test
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 environments {
     production {
         grails.serverURL = "http://www.changeme.com"
@@ -66,12 +69,12 @@ environments {
         service.complex.url = "${grails.serverURL}/services/complex"
     }
     development {
-        grails.serverURL = "http://localhost:8080/${appName}"
+        grails.serverURL = "http://localhost:9090/${appName}"
         service.simple.url = "${grails.serverURL}/services/simple"
         service.complex.url = "${grails.serverURL}/services/complex"
     }
     test {
-        grails.serverURL = "http://localhost:8080/${appName}"
+        grails.serverURL = "http://localhost:9090/${appName}"
         service.simple.url = "${grails.serverURL}/services/simple"
         service.complex.url = "${grails.serverURL}/services/complex"
     }

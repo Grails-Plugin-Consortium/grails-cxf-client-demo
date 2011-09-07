@@ -14,7 +14,7 @@ class SimpleServiceSpec extends IntegrationSpec {
     SimpleService simpleService
     ComplexService complexService
 
-    def "cxf client response compared to inline service response for method1"() {
+    def "get the base service response for simple method1"() {
         given:
         com.cxf.demo.SimpleRequest serviceRequest = new com.cxf.demo.SimpleRequest(name: "Fred Flinstone", age: 40)
 
@@ -26,7 +26,7 @@ class SimpleServiceSpec extends IntegrationSpec {
         serviceResponse.status.contains("normal")
     }
 
-    def "cxf client response compared to inline service response for method2"() {
+    def "get the base service response for simple method2"() {
         given:
         com.cxf.demo.SimpleRequest serviceRequest = new com.cxf.demo.SimpleRequest(name: "Fred Flinstone", age: 40)
 

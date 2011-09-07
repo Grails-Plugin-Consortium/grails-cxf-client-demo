@@ -466,6 +466,33 @@
         <option name="Make" enabled="false" />
       </method>
     </configuration>
+    <configuration default="false" name="All Tests" type="GrailsRunConfigurationType" factoryName="Grails">
+      <module name="cxf-client-demo" />
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="test-app -echoOut -inline" />
+      <setting name="depsClasspath" value="true" />
+      <setting name="passParentEnv" value="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <setting name="launchBrowser" value="true" />
+      <MavenGeneralSettings>
+        <option name="checksumPolicy" value="FAIL" />
+        <option name="failureBehavior" value="FAST" />
+        <option name="localRepository" value="" />
+        <option name="mavenHome" value="" />
+        <option name="nonRecursive" value="false" />
+        <option name="pluginUpdatePolicy" value="DO_NOT_UPDATE" />
+        <option name="printErrorStackTraces" value="false" />
+        <option name="snapshotUpdatePolicy" value="ALWAYS_UPDATE" />
+        <option name="usePluginRegistry" value="false" />
+        <option name="userSettingsFile" value="" />
+        <option name="workOffline" value="false" />
+      </MavenGeneralSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method>
+        <option name="Make" enabled="false" />
+      </method>
+    </configuration>
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
