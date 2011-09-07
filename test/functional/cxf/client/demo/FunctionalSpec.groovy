@@ -22,16 +22,4 @@ class FunctionalSpec extends GebSpec {
         isOld == "false"
         status != ""
     }
-
-//    def "functional test"() {
-    //        given:
-    //        cxf.client.demo.simple.SimpleRequest request = new cxf.client.demo.simple.SimpleRequest(name: "Fred Flinstone", age: 40)
-    //
-    //        when:
-    //        cxf.client.demo.simple.SimpleResponse response = simpleServiceClient.simpleMethod1(request)
-    //
-    //        then:
-    //        response.isOld == false
-    //        response.status == "Fred Flinstone was judged by a normal person"
-    //    }
 }
