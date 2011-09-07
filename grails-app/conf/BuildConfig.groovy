@@ -30,4 +30,6 @@ grails.project.dependency.resolution = {
     }
 }
 
-grails.plugin.location."cxf-client" = "../cxf-client"
+if(!System.getProperty("cxf-client")){
+    grails.plugin.location."cxf-client" = "../cxf-client"
+}
