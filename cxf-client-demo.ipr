@@ -408,7 +408,7 @@
   <component name="ProjectRunConfigurationManager">
     <configuration default="false" name="Integration Tests" type="GrailsRunConfigurationType" factoryName="Grails">
       <module name="cxf-client-demo" />
-      <setting name="vmparams" value="" />
+      <setting name="vmparams" value="-Dserver.port=9090" />
       <setting name="cmdLine" value="test-app integration:  -echoOut" />
       <setting name="depsClasspath" value="true" />
       <setting name="passParentEnv" value="true" />
@@ -441,7 +441,7 @@
     </configuration>
     <configuration default="false" name="Functional Tests" type="GrailsRunConfigurationType" factoryName="Grails">
       <module name="cxf-client-demo" />
-      <setting name="vmparams" value="" />
+      <setting name="vmparams" value="-Dserver.port=9090" />
       <setting name="cmdLine" value="test-app functional:  -echoOut -inline" />
       <setting name="depsClasspath" value="true" />
       <setting name="passParentEnv" value="true" />
@@ -468,7 +468,7 @@
     </configuration>
     <configuration default="false" name="All Tests" type="GrailsRunConfigurationType" factoryName="Grails">
       <module name="cxf-client-demo" />
-      <setting name="vmparams" value="" />
+      <setting name="vmparams" value="-Dserver.port=9090" />
       <setting name="cmdLine" value="test-app -echoOut -inline" />
       <setting name="depsClasspath" value="true" />
       <setting name="passParentEnv" value="true" />

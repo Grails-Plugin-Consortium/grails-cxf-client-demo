@@ -69,7 +69,7 @@ environments {
         service.complex.url = "${grails.serverURL}/services/complex"
     }
     development {
-        grails.serverURL = "http://localhost:9090/${appName}"
+        grails.serverURL = "http://localhost:8080/${appName}"
         service.simple.url = "${grails.serverURL}/services/simple"
         service.complex.url = "${grails.serverURL}/services/complex"
     }
