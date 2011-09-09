@@ -107,15 +107,25 @@ log4j = {
 }
 
 cxf {
+    installDir = "C:/apps/apache-cxf-2.4.2" //only used for wsdl2java script target
     client {
         simpleServiceClient {
+            wsdl = "docs/SimpleService.wsdl" //only used for wsdl2java script target
             clientInterface = cxf.client.demo.simple.SimpleServicePortType
             serviceEndpointAddress = "${service.simple.url}"
         }
 
         complexServiceClient {
+            wsdl = "docs/ComplexService.wsdl" //only used for wsdl2java script target
             clientInterface = cxf.client.demo.complex.ComplexServicePortType
             serviceEndpointAddress = "${service.complex.url}"
         }
+
+        //Another real service to use against wsd2java script
+//        stockQuoteClient {
+//            wsdl = "http://www.webservicex.net/stockquote.asmx?WSDL"
+//            clientInterface = net.webservicex.StockQuoteSoap
+//            serviceEndpointAddress = "http://www.webservicex.net/stockquote.asmx"
+//        }
     }
 }
