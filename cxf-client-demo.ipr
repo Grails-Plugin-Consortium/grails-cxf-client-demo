@@ -395,7 +395,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/cxf-client-demo.iml" filepath="$PROJECT_DIR$/cxf-client-demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cxfClient-inplacePlugin.iml" filepath="$PROJECT_DIR$/cxfClient-inplacePlugin.iml" />
     </modules>
   </component>
   <component name="ProjectResources">

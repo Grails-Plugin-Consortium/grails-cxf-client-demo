@@ -39,7 +39,3 @@ grails.project.dependency.resolution = {
         // runtime 'mysql:mysql-connector-java:5.1.13'
     }
 }
-
-if(!System.getProperty("build")) {
-    grails.plugin.location."cxf-client" = "../cxf-client"
-}
