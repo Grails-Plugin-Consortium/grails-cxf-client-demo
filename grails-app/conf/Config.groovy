@@ -122,10 +122,10 @@ cxf {
         }
 
         //Another real service to use against wsd2java script
-//        stockQuoteClient {
-//            wsdl = "http://www.webservicex.net/stockquote.asmx?WSDL"
-//            clientInterface = net.webservicex.StockQuoteSoap
-//            serviceEndpointAddress = "http://www.webservicex.net/stockquote.asmx"
-//        }
+        stockQuoteClient {
+            wsdl = "http://www.webservicex.net/stockquote.asmx?WSDL"
+            clientInterface = net.webservicex.StockQuoteSoap
+            serviceEndpointAddress = "http://www.webservicex.net/stockquote.asmx"
+        }
     }
 }
