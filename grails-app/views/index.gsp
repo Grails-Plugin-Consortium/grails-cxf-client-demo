@@ -8,30 +8,56 @@
 
 <body>
 <table><tr><td width="50%">
-  <table style="width:100%">
-    <tr><td>
-      <span style="font-weight: bold;">SERVICE SETTINGS</span><Br>
+  <fieldset>
+      <legend>Service Settings</legend>
       <span style="font-weight: bold;">Simple Url:</span> ${grailsApplication.config.service.simple.url}<BR>
-      <span style="font-weight: bold;">Complex Url:</span> ${grailsApplication.config.service.complex.url}
-    </td></tr>
-  </table>
+      <span style="font-weight: bold;">Complex Url:</span> ${grailsApplication.config.service.complex.url}<br>
+      <span style="font-weight: bold;">Secure Url:</span> ${grailsApplication.config.service.secure.url}<br><br>
+      <input type="button" value="Reset Form" onclick="document.location.href = '${createLink(controller:"demo", action:"index")}'"/>
+    </fieldset>
   <br><br>
   <g:form action="simpleServiceDemo" controller="demo" name="simpleServiceDemo">
-    <table style="width:100%">
-      <tr><td colspan="2"><g:submitButton name="submitButton" value="Invoke Simple Service"/>&nbsp;&nbsp;<input type="button" style="background-color: #FCFCFC;border: 1px solid #CCCCCC; font: 11px verdana,arial,helvetica,sans-serif; margin: 2px 0; padding: 2px 4px;" value="Reset Form" onclick="document.location.href = '${createLink(controller:"demo", action:"index")}'"/></td>
-    </table>
+    <fieldset>
+    <legend>Invoke Simple Service</legend>
+    <div style="width:100%"><g:submitButton name="submitButton" value="Invoke"/></div>
+    </fieldset>
   </g:form>
   <br><br>
   <g:form action="complexServiceDemo" controller="demo" name="complexServiceDemo">
-    <table style="width:100%">
-      <tr><td colspan="2"><g:submitButton name="submitButton" value="Invoke Complex Service"/>&nbsp;&nbsp;<input type="button" style="background-color: #FCFCFC;border: 1px solid #CCCCCC; font: 11px verdana,arial,helvetica,sans-serif; margin: 2px 0; padding: 2px 4px;" value="Reset Form" onclick="document.location.href = '${createLink(controller:"demo", action:"index")}'"/></td>
-    </table>
+    <fieldset>
+    <legend>Invoke Complex Service</legend>
+    <div style="width:100%"><g:submitButton name="submitButton" value="Invoke"/></div>
+    </fieldset>
+  </g:form>
+  <br><br>
+  <g:form action="secureServiceDemo" controller="demo" name="secureServiceDemo">
+    <fieldset>
+    <legend>Invoke Secure Service Using Default Interceptor</legend>
+    <div style="width:100%"><g:submitButton name="submitButton" value="Invoke"/></div>
+    </fieldset>
+  </g:form>
+  <br><br>
+  <g:form action="customSecureServiceDemo" controller="demo" name="customSecureServiceDemo">
+    <fieldset>
+    <legend>Invoke Secure Service Using Custom Interceptor</legend>
+    <div style="width:100%"><g:submitButton name="submitButton" value="Invoke"/></div>
+    </fieldset>
+  </g:form>
+  <br><br>
+  <g:form action="insecureServiceDemo" controller="demo" name="insecureServiceDemo">
+    <fieldset>
+    <legend>Invoke Secure Service With No Credentials</legend>
+    <div style="width:100%"><g:submitButton name="submitButton" value="Invoke"/></div>
+    </fieldset>
   </g:form>
 </td>
   <td width="50%">
-    <table style="width:100%">
-      <tr><td>
-        <span style="font-weight: bold;">Search Results</span><BR>
+    <fieldset>
+    <legend>Service Results</legend>
+        <g:if test="${serviceException}">
+          <BR><BR>
+          <span style="font-weight: bold;">Exception:</span> <span class="name">${serviceException}</span><BR>
+        </g:if>
         <g:if test="${simpleRequest1}">
           <BR><BR>
           <span style="font-weight: bold;">Request 1 Name:</span> <span class="name">${simpleRequest1?.name}</span><BR>
@@ -62,7 +88,7 @@
           <span style="font-weight: bold;">Response 2 Children:</span> ${complexResponse2?.children}<br>
            <span style="font-weight: bold;">Response 2 Message:</span> ${complexResponse2?.message}<br>
         </g:if>
-      </td></tr></table>
+     </fieldset>
   </td>
 </tr></table>
 </body>

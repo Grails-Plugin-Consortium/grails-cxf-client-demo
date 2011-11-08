@@ -51,12 +51,12 @@ grails.spring.bean.packages = []
 // request parameters to mask when logging exceptions
 grails.exceptionresolver.params.exclude = ['password']
 
-
 // IMPORTANT - these must be set externally to env if you want to refer to them later for use
 // via cxf.  You can also simply hardcode the url in the cxf section and NOT refer to a variable
 // as well
 service.simple.url = ""
 service.complex.url = ""
+service.secure.url = ""
 
 // set per-environment service url
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -67,16 +67,19 @@ environments {
         grails.serverURL = "http://www.changeme.com"
         service.simple.url = "${grails.serverURL}/services/simple"
         service.complex.url = "${grails.serverURL}/services/complex"
+        service.secure.url = "${grails.serverURL}/services/secure"
     }
     development {
         grails.serverURL = "http://localhost:8080/${appName}"
         service.simple.url = "${grails.serverURL}/services/simple"
         service.complex.url = "${grails.serverURL}/services/complex"
+        service.secure.url = "${grails.serverURL}/services/secure"
     }
     test {
         grails.serverURL = "http://localhost:9090/${appName}"
         service.simple.url = "${grails.serverURL}/services/simple"
         service.complex.url = "${grails.serverURL}/services/complex"
+        service.secure.url = "${grails.serverURL}/services/secure"
     }
 }
 
@@ -119,6 +122,33 @@ cxf {
             wsdl = "docs/ComplexService.wsdl" //only used for wsdl2java script target
             clientInterface = cxf.client.demo.complex.ComplexServicePortType
             serviceEndpointAddress = "${service.complex.url}"
+        }
+
+        insecureServiceClient {
+            wsdl = "docs/SecureService.wsdl" //only used for wsdl2java script target
+            namespace = "cxf.client.demo.secure"
+            clientInterface = cxf.client.demo.secure.SecureServicePortType
+            secured = false
+            serviceEndpointAddress = "${service.secure.url}"
+        }
+
+        customSecureServiceClient {
+            wsdl = "docs/SecureService.wsdl" //only used for wsdl2java script target
+            namespace = "cxf.client.demo.secure"
+            clientInterface = cxf.client.demo.secure.SecureServicePortType
+            secured = true
+            securityInterceptor = 'myCustomInterceptor'
+            serviceEndpointAddress = "${service.secure.url}"
+        }
+
+        secureServiceClient {
+            wsdl = "docs/SecureService.wsdl" //only used for wsdl2java script target
+            namespace = "cxf.client.demo.secure"
+            clientInterface = cxf.client.demo.secure.SecureServicePortType
+            secured = true
+            username = "wsuser"
+            password = "secret"
+            serviceEndpointAddress = "${service.secure.url}"
         }
 
         //Another real service to use against wsd2java script

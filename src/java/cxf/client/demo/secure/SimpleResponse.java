@@ -1,5 +1,5 @@
 
-package cxf.client.demo;
+package cxf.client.demo.secure;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

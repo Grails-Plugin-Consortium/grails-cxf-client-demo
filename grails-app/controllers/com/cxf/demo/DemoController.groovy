@@ -1,15 +1,52 @@
 package com.cxf.demo
 
 import cxf.client.demo.complex.ComplexServicePortType
+import cxf.client.demo.secure.SecureServicePortType
 import cxf.client.demo.simple.SimpleServicePortType
 
 class DemoController {
 
     SimpleServicePortType simpleServiceClient
     ComplexServicePortType complexServiceClient
+    SecureServicePortType secureServiceClient
+    SecureServicePortType insecureServiceClient
+    SecureServicePortType customSecureServiceClient
 
     def index = {
         render(view: "/index")
+    }
+
+    def insecureServiceDemo = {
+        def serviceException = null
+        cxf.client.demo.simple.SimpleRequest request1 = new cxf.client.demo.simple.SimpleRequest(age: 32, name: "Christian")
+        cxf.client.demo.secure.SimpleResponse response1 = new cxf.client.demo.secure.SimpleResponse()
+        try {
+            response1 = insecureServiceClient.secureMethod()
+        } catch (Exception e) {
+            serviceException = new Exception("Service invocation threw an error")
+        }
+
+        render(view: '/index', model: [serviceException: serviceException, simpleRequest1: request1, simpleResponse1: response1])
+    }
+
+    def customSecureServiceDemo = {
+        def serviceException = null
+        cxf.client.demo.simple.SimpleRequest request1 = new cxf.client.demo.simple.SimpleRequest(age: 32, name: "Christian")
+        cxf.client.demo.secure.SimpleResponse response1 = new cxf.client.demo.secure.SimpleResponse()
+        try {
+            response1 = customSecureServiceClient.secureMethod()
+        } catch (Exception e) {
+            serviceException = new Exception("Service invocation threw an error")
+        }
+
+        render(view: '/index', model: [serviceException: serviceException, simpleRequest1: request1, simpleResponse1: response1])
+    }
+
+    def secureServiceDemo = {
+        cxf.client.demo.simple.SimpleRequest request1 = new cxf.client.demo.simple.SimpleRequest(age: 32, name: "Christian")
+        cxf.client.demo.secure.SimpleResponse response1 = secureServiceClient.secureMethod()
+
+        render(view: '/index', model: [simpleRequest1: request1, simpleResponse1: response1])
     }
 
     /**

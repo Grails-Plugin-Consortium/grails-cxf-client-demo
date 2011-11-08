@@ -1,5 +1,5 @@
 
-package cxf.client.demo;
+package cxf.client.demo.secure;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -8,12 +8,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for simpleMethod1Response complex type.
+ * <p>Java class for secureMethodResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="simpleMethod1Response">
+ * &lt;complexType name="secureMethodResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -27,10 +27,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "simpleMethod1Response", propOrder = {
+@XmlType(name = "secureMethodResponse", propOrder = {
     "_return"
 })
-public class SimpleMethod1Response {
+public class SecureMethodResponse {
 
     @XmlElement(name = "return")
     protected SimpleResponse _return;
