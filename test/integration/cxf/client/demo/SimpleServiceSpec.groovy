@@ -12,7 +12,6 @@ class SimpleServiceSpec extends IntegrationSpec {
 
     //These are just regular old services
     SimpleService simpleService
-    ComplexService complexService
 
     def "get the base service response for simple method1"() {
         given:
