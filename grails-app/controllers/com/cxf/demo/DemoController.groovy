@@ -46,7 +46,7 @@ class DemoController {
         cxf.client.demo.simple.SimpleRequest request1 = new cxf.client.demo.simple.SimpleRequest(age: 32, name: "Christian")
         cxf.client.demo.secure.SimpleResponse response1 = secureServiceClient.secureMethod()
 
-        render(view: '/index', model: [simpleRequest1: request1, simpleResponse1: response1])
+        render(view: '/index', model: [simpleRequest1: request1, ksimpleResponse1: response1])
     }
 
     /**
