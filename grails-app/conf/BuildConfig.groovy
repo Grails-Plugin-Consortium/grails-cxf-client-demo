@@ -17,6 +17,7 @@ grails.project.dependency.resolution = {
 
         // uncomment the below to enable remote dependency resolution
         // from public Maven repositories
+        //mavenRepo "http://m2repo.spockframework.org/snapshots"
         mavenLocal()
         mavenCentral()
         //mavenRepo "http://snapshots.repository.codehaus.org"
@@ -24,9 +25,21 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
         //mavenRepo "https://nexus.codehaus.org/content/repositories/snapshots"
+
     }
     dependencies {
-        // runtime 'mysql:mysql-connector-java:5.1.13'
+        //groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.8.3'
+        //test "org.spockframework:spock-core:0.6-groovy-1.8-SNAPSHOT"
+//        compile('org.apache.ws.security:wss4j:1.5.9')
+//        compile('org.apache.cxf:cxf-rt-ws-security:2.3.0') {
+//            excludes 'spring-web'
+//        }
+    }
+
+     plugins {
+        test ":spock:0.5-groovy-1.7"
+        test ":code-coverage:1.2.5"
+        test ":codenarc:0.15"
     }
 }
 

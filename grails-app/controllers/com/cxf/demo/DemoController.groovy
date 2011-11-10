@@ -3,6 +3,7 @@ package com.cxf.demo
 import cxf.client.demo.complex.ComplexServicePortType
 import cxf.client.demo.secure.SecureServicePortType
 import cxf.client.demo.simple.SimpleServicePortType
+import net.webservicex.StockQuoteSoap
 
 class DemoController {
 
@@ -11,9 +12,21 @@ class DemoController {
     SecureServicePortType secureServiceClient
     SecureServicePortType insecureServiceClient
     SecureServicePortType customSecureServiceClient
+    StockQuoteSoap stockQuoteClient
 
     def index = {
         render(view: "/index")
+    }
+
+    def stockQuoteDemo = {
+        String stockQuote
+        try {
+            stockQuote = stockQuoteClient.getQuote("AAPL")
+        } catch(Exception e){
+            stockQuote = e.message
+        }
+
+        render(view: '/index', model: [stockQuote: stockQuote])
     }
 
     def insecureServiceDemo = {
@@ -46,7 +59,7 @@ class DemoController {
         cxf.client.demo.simple.SimpleRequest request1 = new cxf.client.demo.simple.SimpleRequest(age: 32, name: "Christian")
         cxf.client.demo.secure.SimpleResponse response1 = secureServiceClient.secureMethod()
 
-        render(view: '/index', model: [simpleRequest1: request1, ksimpleResponse1: response1])
+        render(view: '/index', model: [simpleRequest1: request1, simpleResponse1: response1])
     }
 
     /**

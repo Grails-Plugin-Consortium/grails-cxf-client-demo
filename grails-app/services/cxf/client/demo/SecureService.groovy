@@ -8,6 +8,7 @@ class SecureService {
     static expose = ['cxf']
 
     SimpleResponse secureMethod() {
+        println "in secure Method"
         new SimpleResponse(isOld: false, status: "Secure Service")
     }
 }

@@ -16,6 +16,13 @@
       <input type="button" value="Reset Form" onclick="document.location.href = '${createLink(controller:"demo", action:"index")}'"/>
     </fieldset>
   <br><br>
+  <g:form action="stockQuoteDemo" controller="demo" name="stockQuoteDemo">
+    <fieldset>
+    <legend>Invoke Stock Quote Service</legend>
+    <div style="width:100%"><g:submitButton name="submitButton" value="Invoke"/></div>
+    </fieldset>
+  </g:form>
+  <br><br>
   <g:form action="simpleServiceDemo" controller="demo" name="simpleServiceDemo">
     <fieldset>
     <legend>Invoke Simple Service</legend>
@@ -46,7 +53,7 @@
   <br><br>
   <g:form action="insecureServiceDemo" controller="demo" name="insecureServiceDemo">
     <fieldset>
-    <legend>Invoke Secure Service With No Credentials</legend>
+    <legend>Invoke Secure Service With No Credentials (Exception)</legend>
     <div style="width:100%"><g:submitButton name="submitButton" value="Invoke"/></div>
     </fieldset>
   </g:form>
@@ -54,6 +61,10 @@
   <td width="50%">
     <fieldset>
     <legend>Service Results</legend>
+       <g:if test="${stockQuote}">
+          <BR><BR>
+          <span class="name">${stockQuote?.encodeAsHTML()}</span><BR>
+        </g:if>
         <g:if test="${serviceException}">
           <BR><BR>
           <span style="font-weight: bold;">Exception:</span> <span class="name">${serviceException}</span><BR>
