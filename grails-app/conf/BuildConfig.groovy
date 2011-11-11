@@ -37,9 +37,9 @@ grails.project.dependency.resolution = {
     }
 
      plugins {
-        test ":spock:0.5-groovy-1.7"
-        test ":code-coverage:1.2.5"
-        test ":codenarc:0.15"
+        //test ":spock:0.5-groovy-1.7"
+        //test ":code-coverage:1.2.5"
+        //test ":codenarc:0.15"
     }
 }
 
