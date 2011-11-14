@@ -116,12 +116,14 @@ cxf {
             wsdl = "docs/SimpleService.wsdl" //only used for wsdl2java script target
             clientInterface = cxf.client.demo.simple.SimpleServicePortType
             serviceEndpointAddress = "${service.simple.url}"
+            namespace = "cxf.client.demo.simple"
         }
 
         complexServiceClient {
             wsdl = "docs/ComplexService.wsdl" //only used for wsdl2java script target
             clientInterface = cxf.client.demo.complex.ComplexServicePortType
             serviceEndpointAddress = "${service.complex.url}"
+            namespace = "cxf.client.demo.complex"
         }
 
         insecureServiceClient {
@@ -130,6 +132,7 @@ cxf {
             clientInterface = cxf.client.demo.secure.SecureServicePortType
             secured = false
             serviceEndpointAddress = "${service.secure.url}"
+            namespace = "cxf.client.demo.secure"
         }
 
         customSecureServiceClient {
@@ -139,6 +142,7 @@ cxf {
             secured = true
             securityInterceptor = 'myCustomInterceptor'
             serviceEndpointAddress = "${service.secure.url}"
+            namespace = "cxf.client.demo.secure"
         }
 
         secureServiceClient {
@@ -149,6 +153,7 @@ cxf {
             username = "wsuser"
             password = "secret"
             serviceEndpointAddress = "${service.secure.url}"
+            namespace = "cxf.client.demo.secure"
         }
 
         //Another real service to use against wsd2java script
