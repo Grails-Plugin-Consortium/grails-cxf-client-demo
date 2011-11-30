@@ -12,6 +12,7 @@ class DemoController {
     SecureServicePortType secureServiceClient
     SecureServicePortType insecureServiceClient
     SecureServicePortType customSecureServiceClient
+    SecureServicePortType customSecureServiceOutClient
     StockQuoteSoap stockQuoteClient
 
     def index = {
@@ -48,6 +49,19 @@ class DemoController {
         cxf.client.demo.secure.SimpleResponse response1 = new cxf.client.demo.secure.SimpleResponse()
         try {
             response1 = customSecureServiceClient.secureMethod()
+        } catch (Exception e) {
+            serviceException = new Exception("Service invocation threw an error")
+        }
+
+        render(view: '/index', model: [serviceException: serviceException, simpleRequest1: request1, simpleResponse1: response1])
+    }
+
+    def customSecureServiceOutDemo = {
+        def serviceException = null
+        cxf.client.demo.simple.SimpleRequest request1 = new cxf.client.demo.simple.SimpleRequest(age: 32, name: "Christian")
+        cxf.client.demo.secure.SimpleResponse response1 = new cxf.client.demo.secure.SimpleResponse()
+        try {
+            response1 = customSecureServiceOutClient.secureMethod()
         } catch (Exception e) {
             serviceException = new Exception("Service invocation threw an error")
         }

@@ -107,6 +107,7 @@ log4j = {
     warn 'org.mortbay.log'
 
     info 'com.grails.cxf.client'
+    debug 'org.apache.cxf.interceptor'
 }
 
 cxf {
@@ -141,6 +142,17 @@ cxf {
             clientInterface = cxf.client.demo.secure.SecureServicePortType
             secured = true
             securityInterceptor = 'myCustomInterceptor'
+            serviceEndpointAddress = "${service.secure.url}"
+            namespace = "cxf.client.demo.secure"
+        }
+
+         customSecureServiceOutClient {
+            wsdl = "docs/SecureService.wsdl" //only used for wsdl2java script target
+            namespace = "cxf.client.demo.secure"
+            clientInterface = cxf.client.demo.secure.SecureServicePortType
+            secured = true
+            securityInterceptor = 'myCustomInterceptor'
+            outInterceptor = 'myCustomLoggingInterceptor, myCustomLoggingInterceptor2'
             serviceEndpointAddress = "${service.secure.url}"
             namespace = "cxf.client.demo.secure"
         }

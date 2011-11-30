@@ -44,6 +44,7 @@
     </fieldset>
   </g:form>
   <br><br>
+
   <g:form action="customSecureServiceDemo" controller="demo" name="customSecureServiceDemo">
     <fieldset>
     <legend>Invoke Secure Service Using Custom Interceptor</legend>
@@ -54,6 +55,13 @@
   <g:form action="insecureServiceDemo" controller="demo" name="insecureServiceDemo">
     <fieldset>
     <legend>Invoke Secure Service With No Credentials (Exception)</legend>
+    <div style="width:100%"><g:submitButton name="submitButton" value="Invoke"/></div>
+    </fieldset>
+  </g:form>
+  <br><br>
+  <g:form action="customSecureServiceOutDemo" controller="demo" name="customSecureServiceOutDemo">
+    <fieldset>
+    <legend>Invoke Secure Service Using Custom Interceptor and Custom Logging</legend>
     <div style="width:100%"><g:submitButton name="submitButton" value="Invoke"/></div>
     </fieldset>
   </g:form>

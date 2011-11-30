@@ -1,16 +1,16 @@
 package com.cxf.demo.security
 
-import com.grails.cxf.client.security.SecurityInterceptor
 import javax.security.auth.callback.Callback
 import javax.security.auth.callback.CallbackHandler
 import javax.security.auth.callback.UnsupportedCallbackException
 import org.apache.cxf.ws.security.wss4j.WSS4JOutInterceptor
 import org.apache.ws.security.WSPasswordCallback
 import org.apache.ws.security.handler.WSHandlerConstants
+import com.grails.cxf.client.CxfClientInterceptor
 
 /**
  */
-class CustomSecurityInterceptor implements SecurityInterceptor {
+class CustomSecurityInterceptor implements CxfClientInterceptor {
 
     def pass
     def user

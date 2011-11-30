@@ -30,16 +30,22 @@ grails.project.dependency.resolution = {
     dependencies {
         //groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.8.3'
         //test "org.spockframework:spock-core:0.6-groovy-1.8-SNAPSHOT"
-//        compile('org.apache.ws.security:wss4j:1.5.9')
-//        compile('org.apache.cxf:cxf-rt-ws-security:2.3.0') {
-//            excludes 'spring-web'
-//        }
+        //        compile('org.apache.ws.security:wss4j:1.5.9')
+        //        compile('org.apache.cxf:cxf-rt-ws-security:2.3.0') {
+        //            excludes 'spring-web'
+        //        }
     }
 
-     plugins {
-        //test ":spock:0.5-groovy-1.7"
-        //test ":code-coverage:1.2.5"
-        //test ":codenarc:0.15"
+    plugins {
+        test(":spock:0.5-groovy-1.7") {
+            export = false
+        }
+        test(":code-coverage:1.2.5") {
+            export = false
+        }
+        test(":codenarc:0.16.1") {
+            export = false
+        }
     }
 }
 
