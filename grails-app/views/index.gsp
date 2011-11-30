@@ -30,6 +30,14 @@
     </fieldset>
   </g:form>
   <br><br>
+  <g:form action="simpleServiceInterceptorDemo" controller="demo" name="simpleServiceInterceptorDemo">
+    <fieldset>
+    <legend>Invoke Simple Service With Custom Interceptors</legend>
+    default interceptors are set to false<br>
+    <div style="width:100%"><g:submitButton name="submitButton" value="Invoke"/></div>
+    </fieldset>
+  </g:form>
+  <br><br>
   <g:form action="complexServiceDemo" controller="demo" name="complexServiceDemo">
     <fieldset>
     <legend>Invoke Complex Service</legend>
@@ -71,7 +79,7 @@
     <legend>Service Results</legend>
        <g:if test="${stockQuote}">
           <BR><BR>
-          <span class="name">${stockQuote?.encodeAsHTML()}</span><BR>
+          <span class="name">${stockQuote?.encodeAsHTML()?.replace("&gt;","&gt;<br>")}</span><BR>
         </g:if>
         <g:if test="${serviceException}">
           <BR><BR>

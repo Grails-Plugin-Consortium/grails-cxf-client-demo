@@ -8,6 +8,7 @@ import net.webservicex.StockQuoteSoap
 class DemoController {
 
     SimpleServicePortType simpleServiceClient
+    SimpleServicePortType simpleServiceInterceptorClient
     ComplexServicePortType complexServiceClient
     SecureServicePortType secureServiceClient
     SecureServicePortType insecureServiceClient
@@ -87,6 +88,18 @@ class DemoController {
 
         cxf.client.demo.simple.SimpleRequest request2 = new cxf.client.demo.simple.SimpleRequest(age: 32, name: "Christian")
         cxf.client.demo.simple.SimpleResponse response2 = simpleServiceClient.simpleMethod2(request2)
+
+        render(view: '/index', model: [simpleRequest1: request1, simpleResponse1: response1, simpleRequest2: request2, simpleResponse2: response2])
+
+    }
+
+    def simpleServiceInterceptorDemo = {
+        cxf.client.demo.simple.SimpleRequest request1 = new cxf.client.demo.simple.SimpleRequest(age: 32, name: "Christian")
+        cxf.client.demo.simple.SimpleResponse response1 = simpleServiceInterceptorClient.simpleMethod1(request1)
+
+
+        cxf.client.demo.simple.SimpleRequest request2 = new cxf.client.demo.simple.SimpleRequest(age: 32, name: "Christian")
+        cxf.client.demo.simple.SimpleResponse response2 = simpleServiceInterceptorClient.simpleMethod2(request2)
 
         render(view: '/index', model: [simpleRequest1: request1, simpleResponse1: response1, simpleRequest2: request2, simpleResponse2: response2])
 

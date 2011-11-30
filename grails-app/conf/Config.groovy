@@ -107,7 +107,8 @@ log4j = {
     warn 'org.mortbay.log'
 
     info 'com.grails.cxf.client'
-    debug 'org.apache.cxf.interceptor'
+    info 'org.apache.cxf.interceptor'
+    info 'com.cxf.demo.logging'
 }
 
 cxf {
@@ -117,6 +118,16 @@ cxf {
             wsdl = "docs/SimpleService.wsdl" //only used for wsdl2java script target
             clientInterface = cxf.client.demo.simple.SimpleServicePortType
             serviceEndpointAddress = "${service.simple.url}"
+            namespace = "cxf.client.demo.simple"
+        }
+
+        simpleServiceInterceptorClient {
+            wsdl = "docs/SimpleService.wsdl" //only used for wsdl2java script target
+            clientInterface = cxf.client.demo.simple.SimpleServicePortType
+            serviceEndpointAddress = "${service.simple.url}"
+            outInterceptors = 'customLoggingOutInterceptor' //can use single item, comma separated list or groovy list
+            inInterceptors = ['customLoggingInInterceptor', 'verboseLoggingInInterceptor'] //can use single item, comma separated list or groovy list
+            enableDefaultLoggingInterceptors = false
             namespace = "cxf.client.demo.simple"
         }
 
@@ -146,13 +157,15 @@ cxf {
             namespace = "cxf.client.demo.secure"
         }
 
-         customSecureServiceOutClient {
+        customSecureServiceOutClient {
             wsdl = "docs/SecureService.wsdl" //only used for wsdl2java script target
             namespace = "cxf.client.demo.secure"
             clientInterface = cxf.client.demo.secure.SecureServicePortType
             secured = true
             securityInterceptor = 'myCustomInterceptor'
-            outInterceptor = 'myCustomLoggingInterceptor, myCustomLoggingInterceptor2'
+            outInterceptors = 'customLoggingOutInterceptor' //can use single item, comma separated list or groovy list
+            inInterceptors = ['customLoggingInInterceptor', 'verboseLoggingInInterceptor'] //can use single item, comma separated list or groovy list
+            enableDefaultLoggingInterceptors = true //true by default (redundant)
             serviceEndpointAddress = "${service.secure.url}"
             namespace = "cxf.client.demo.secure"
         }

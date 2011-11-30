@@ -1,17 +1,24 @@
-import com.cxf.demo.logging.CustomLoggingInterceptor
+import com.cxf.demo.logging.CustomLoggingInInterceptor
+import com.cxf.demo.logging.VerboseCustomLoggingInInterceptor
 import com.cxf.demo.security.CustomSecurityInterceptor
+import com.cxf.demo.logging.CustomLoggingOutInterceptor
 
 // Place your Spring DSL code here
 beans = {
-    myCustomInterceptor(CustomSecurityInterceptor){
+    myCustomInterceptor(CustomSecurityInterceptor) {
         user = "wsuser"
         pass = "secret"
     }
 
-    myCustomLoggingInterceptor(CustomLoggingInterceptor){
-        name = "myCustomLoggingInterceptor"
+    customLoggingInInterceptor(CustomLoggingInInterceptor) {
+        name = "customLoggingInInterceptor"
     }
-    myCustomLoggingInterceptor2(CustomLoggingInterceptor){
-        name = "myCustomLoggingInterceptor2"
+
+    verboseLoggingInInterceptor(VerboseCustomLoggingInInterceptor) {
+        name = "verboseLoggingInInterceptor"
+    }
+
+     customLoggingOutInterceptor(CustomLoggingOutInterceptor) {
+        name = "customLoggingOutInterceptor"
     }
 }
