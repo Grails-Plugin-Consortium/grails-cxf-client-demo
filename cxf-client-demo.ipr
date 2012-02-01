@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ASMPluginConfiguration">
+    <asm skipDebug="false" skipFrames="false" skipCode="false" expandFrames="false" />
+    <groovy codeStyle="LEGACY" />
+  </component>
   <component name="AntConfiguration">
     <defaultAnt bundledAnt="true" />
   </component>
@@ -414,6 +418,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/cxf-client-demo.iml" filepath="$PROJECT_DIR$/cxf-client-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/cxf-client-demo-grailsPlugins.iml" filepath="$PROJECT_DIR$/cxf-client-demo-grailsPlugins.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cxfClient-inplacePlugin.iml" filepath="$PROJECT_DIR$/cxfClient-inplacePlugin.iml" />
     </modules>
   </component>
   <component name="ProjectResources">

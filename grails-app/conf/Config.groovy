@@ -116,9 +116,12 @@ cxf {
     client {
         simpleServiceClient {
             wsdl = "docs/SimpleService.wsdl" //only used for wsdl2java script target
+            wsdlArgs = "-autoNameResolution"
             clientInterface = cxf.client.demo.simple.SimpleServicePortType
             serviceEndpointAddress = "${service.simple.url}"
             namespace = "cxf.client.demo.simple"
+            receiveTimeout = 0 //no timeout
+            connectionTimeout = 0 //no timeout
         }
 
         simpleServiceInterceptorClient {
@@ -136,6 +139,7 @@ cxf {
             clientInterface = cxf.client.demo.complex.ComplexServicePortType
             serviceEndpointAddress = "${service.complex.url}"
             namespace = "cxf.client.demo.complex"
+            receiveTimeout = 120000 //2min
         }
 
         insecureServiceClient {
@@ -186,6 +190,8 @@ cxf {
             wsdl = "http://www.webservicex.net/stockquote.asmx?WSDL"
             clientInterface = net.webservicex.StockQuoteSoap
             serviceEndpointAddress = "http://www.webservicex.net/stockquote.asmx"
+            receiveTimeout = 120000 //2min
+            connectionTimeout = 120000 //2min
         }
     }
 }
