@@ -46,11 +46,6 @@
       <library name="Grails User Library (cxf-client-demo)">
         <CLASSES>
           <root url="file://$MODULE_DIR$/lib" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.bouncycastle/bcprov-jdk15/jars/bcprov-jdk15-1.43.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.cxf/cxf-rt-ws-security/jars/cxf-rt-ws-security-2.3.0.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/xalan/xalan/jars/xalan-2.7.1.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.santuario/xmlsec/bundles/xmlsec-1.4.3.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.ws.security/wss4j/bundles/wss4j-1.5.9.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.codehaus.jettison/jettison/bundles/jettison-1.2.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.cxf/cxf-rt-databinding-aegis/jars/cxf-rt-databinding-aegis-2.3.0.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/javax.ws.rs/jsr311-api/jars/jsr311-api-1.1.1.jar!/" />
@@ -87,6 +82,11 @@
           <root url="jar://$USER_HOME$/.ivy2/cache/net.sourceforge.cobertura/cobertura/jars/cobertura-1.9.4.1.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.gmetrics/GMetrics/jars/GMetrics-0.4.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.codenarc/CodeNarc/jars/CodeNarc-0.16.1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.bouncycastle/bcprov-jdk15/jars/bcprov-jdk15-1.43.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.cxf/cxf-rt-ws-security/jars/cxf-rt-ws-security-2.3.0.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/xalan/xalan/jars/xalan-2.7.1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.santuario/xmlsec/bundles/xmlsec-1.4.3.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.ws.security/wss4j/bundles/wss4j-1.5.9.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

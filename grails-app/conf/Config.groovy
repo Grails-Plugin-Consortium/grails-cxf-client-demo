@@ -120,8 +120,9 @@ cxf {
             clientInterface = cxf.client.demo.simple.SimpleServicePortType
             serviceEndpointAddress = "${service.simple.url}"
             namespace = "cxf.client.demo.simple"
-            receiveTimeout = 0 //no timeout
-            connectionTimeout = 0 //no timeout
+            //receiveTimeout = 0 //no timeout
+            //connectionTimeout = 0 //no timeout
+            httpClientPolicy = 'customHttpClientPolicy'
         }
 
         simpleServiceInterceptorClient {
