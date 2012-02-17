@@ -88,7 +88,6 @@
         <jarDirectory url="file://$MODULE_DIR$/../cxf-client/lib" recursive="false" />
       </library>
     </orderEntry>
-    <orderEntry type="module" module-name="cxf-client-demo-grailsPlugins" />
   </component>
 </module>
 

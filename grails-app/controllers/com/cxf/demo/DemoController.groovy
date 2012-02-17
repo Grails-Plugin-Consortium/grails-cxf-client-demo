@@ -31,6 +31,17 @@ class DemoController {
         render(view: '/index', model: [stockQuote: stockQuote])
     }
 
+     def stockQuoteDemoJasper = {
+        String stockQuote
+        try {
+            stockQuote = stockQuoteClient.getQuote("AAPL")
+        } catch(Exception e){
+            stockQuote = e.message
+        }
+
+        render model: [stockQuote: stockQuote]
+    }
+
     def insecureServiceDemo = {
         def serviceException = null
         cxf.client.demo.simple.SimpleRequest request1 = new cxf.client.demo.simple.SimpleRequest(age: 32, name: "Christian")
