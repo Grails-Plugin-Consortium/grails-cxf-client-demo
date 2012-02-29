@@ -32,7 +32,7 @@
   <br><br>
   <g:form action="simpleServiceInterceptorDemo" controller="demo" name="simpleServiceInterceptorDemo">
     <fieldset>
-    <legend>Invoke Simple Service With Custom Interceptors</legend>
+    <legend>Invoke Simple Service With Custom Interceptors (simpleServiceInterceptorDemo)</legend>
     default interceptors are set to false<br>
     <div style="width:100%"><g:submitButton name="submitButton" value="Invoke"/></div>
     </fieldset>

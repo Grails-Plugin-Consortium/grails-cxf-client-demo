@@ -39,6 +39,7 @@
     </content>
     <content url="file://$USER_HOME$/.grails/1.3.7/projects/cxf-client-demo/plugins/cxf-client-1.2.7">
       <sourceFolder url="file://$USER_HOME$/.grails/1.3.7/projects/cxf-client-demo/plugins/cxf-client-1.2.7/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/1.3.7/projects/cxf-client-demo/plugins/cxf-client-1.2.7/grails-app/i18n" isTestSource="false" />
       <excludeFolder url="file://$USER_HOME$/.grails/1.3.7/projects/cxf-client-demo/plugins/cxf-client-1.2.7/target/classes" />
       <excludeFolder url="file://$USER_HOME$/.grails/1.3.7/projects/cxf-client-demo/plugins/cxf-client-1.2.7/target/test-classes" />
       <excludeFolder url="file://$USER_HOME$/.grails/1.3.7/projects/cxf-client-demo/plugins/cxf-client-1.2.7/web-app/plugins" />
@@ -53,6 +54,7 @@
       <sourceFolder url="file://$USER_HOME$/.grails/1.3.7/projects/cxf-client-demo/plugins/jasper-1.5.2/grails-app/controllers" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/.grails/1.3.7/projects/cxf-client-demo/plugins/jasper-1.5.2/grails-app/services" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/.grails/1.3.7/projects/cxf-client-demo/plugins/jasper-1.5.2/grails-app/taglib" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/1.3.7/projects/cxf-client-demo/plugins/jasper-1.5.2/grails-app/i18n" isTestSource="false" />
       <excludeFolder url="file://$USER_HOME$/.grails/1.3.7/projects/cxf-client-demo/plugins/jasper-1.5.2/target/classes" />
       <excludeFolder url="file://$USER_HOME$/.grails/1.3.7/projects/cxf-client-demo/plugins/jasper-1.5.2/target/test-classes" />
       <excludeFolder url="file://$USER_HOME$/.grails/1.3.7/projects/cxf-client-demo/plugins/jasper-1.5.2/web-app/plugins" />

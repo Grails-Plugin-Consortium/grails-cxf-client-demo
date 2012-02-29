@@ -102,13 +102,16 @@ log4j = {
           'org.codehaus.groovy.grails.orm.hibernate', // hibernate integration
           'org.springframework',
           'org.hibernate',
-          'net.sf.ehcache.hibernate'
+          'net.sf.ehcache.hibernate',
+          'com.grails.cxf.client',
+          'com.cxf.demo.fault'
 
     warn 'org.mortbay.log'
 
     info 'com.grails.cxf.client'
     info 'org.apache.cxf.interceptor'
     info 'com.cxf.demo.logging'
+    info 'com.cxf.demo.fault'
 }
 
 cxf {
@@ -168,6 +171,22 @@ cxf {
             clientInterface = cxf.client.demo.secure.SecureServicePortType
             secured = true
             securityInterceptor = 'myCustomInterceptor'
+            outFaultInterceptors = [
+                    'customFaultOutInterceptorSetup',
+                    'customFaultOutInterceptorPreLogical',
+                    'customFaultOutInterceptorUserLogical',
+                    'customFaultOutInterceptorPostLogical',
+                    'customFaultOutInterceptorPrepareSend',
+                    'customFaultOutInterceptorPreStream',
+                    'customFaultOutInterceptorPreProtocol',
+                    'customFaultOutInterceptorWrite',
+                    'customFaultOutInterceptorMarshal',
+                    'customFaultOutInterceptorPreProtocol',
+                    'customFaultOutInterceptorPostProtocol',
+                    'customFaultOutInterceptorPreStream',
+                    'customFaultOutInterceptorPostStream',
+                    'customFaultOutInterceptorSend'
+            ]
             outInterceptors = 'customLoggingOutInterceptor' //can use single item, comma separated list or groovy list
             inInterceptors = ['customLoggingInInterceptor', 'verboseLoggingInInterceptor'] //can use single item, comma separated list or groovy list
             enableDefaultLoggingInterceptors = true //true by default (redundant)
@@ -175,24 +194,24 @@ cxf {
             namespace = "cxf.client.demo.secure"
         }
 
-        secureServiceClient {
-            wsdl = "docs/SecureService.wsdl" //only used for wsdl2java script target
-            namespace = "cxf.client.demo.secure"
-            clientInterface = cxf.client.demo.secure.SecureServicePortType
-            secured = true
-            username = "wsuser"
-            password = "secret"
-            serviceEndpointAddress = "${service.secure.url}"
-            namespace = "cxf.client.demo.secure"
-        }
-
-        //Another real service to use against wsd2java script
-        stockQuoteClient {
-            wsdl = "http://www.webservicex.net/stockquote.asmx?WSDL"
-            clientInterface = net.webservicex.StockQuoteSoap
-            serviceEndpointAddress = "http://www.webservicex.net/stockquote.asmx"
-            receiveTimeout = 120000 //2min
-            connectionTimeout = 120000 //2min
-        }
+//        secureServiceClient {
+//            wsdl = "docs/SecureService.wsdl" //only used for wsdl2java script target
+//            namespace = "cxf.client.demo.secure"
+//            clientInterface = cxf.client.demo.secure.SecureServicePortType
+//            secured = true
+//            username = "wsuser"
+//            password = "secret"
+//            serviceEndpointAddress = "${service.secure.url}"
+//            namespace = "cxf.client.demo.secure"
+//        }
+//
+//        //Another real service to use against wsd2java script
+//        stockQuoteClient {
+//            wsdl = "http://www.webservicex.net/stockquote.asmx?WSDL"
+//            clientInterface = net.webservicex.StockQuoteSoap
+//            serviceEndpointAddress = "http://www.webservicex.net/stockquote.asmx"
+//            receiveTimeout = 120000 //2min
+//            connectionTimeout = 120000 //2min
+//        }
     }
 }
