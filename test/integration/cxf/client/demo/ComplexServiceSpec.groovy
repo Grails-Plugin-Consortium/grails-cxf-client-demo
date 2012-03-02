@@ -1,8 +1,8 @@
 package cxf.client.demo
 
-import grails.plugin.spock.IntegrationSpec
 import com.cxf.demo.ComplexChild
 import com.cxf.demo.fault.ComplexContrivedException
+import grails.plugin.spock.IntegrationSpec
 
 /**
  */
