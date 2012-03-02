@@ -1,4 +1,4 @@
-package com.cxf.demo.fault
+package com.cxf.demo.fault.out.interceptor
 
 import org.apache.cxf.binding.soap.SoapMessage
 import org.apache.cxf.binding.soap.interceptor.AbstractSoapInterceptor
@@ -7,14 +7,14 @@ import org.apache.cxf.phase.Phase
 
 /**
  */
-class CustomFaultOutInterceptorPrepareSend extends AbstractSoapInterceptor {
+class CustomFaultOutInterceptorUserProtocol extends AbstractSoapInterceptor {
 
-    public CustomFaultOutInterceptorPrepareSend() {
-        super(Phase.PREPARE_SEND)
+    public CustomFaultOutInterceptorUserProtocol() {
+        super(Phase.USER_PROTOCOL)
     }
 
     public void handleMessage(SoapMessage message) throws Fault {
-        println "PREPARE_SEND"
+        println "USER_PROTOCOL"
         Fault fault = (Fault) message?.getContent(Exception.class)
         fault?.printStackTrace()
         println fault?.message

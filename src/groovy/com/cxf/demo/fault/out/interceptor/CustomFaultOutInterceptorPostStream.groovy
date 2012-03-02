@@ -1,4 +1,4 @@
-package com.cxf.demo.fault
+package com.cxf.demo.fault.out.interceptor
 
 import org.apache.cxf.binding.soap.SoapMessage
 import org.apache.cxf.binding.soap.interceptor.AbstractSoapInterceptor

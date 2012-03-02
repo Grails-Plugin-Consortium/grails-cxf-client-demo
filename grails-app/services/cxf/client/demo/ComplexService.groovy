@@ -3,6 +3,7 @@ package cxf.client.demo
 import com.cxf.demo.ComplexResponse
 import com.cxf.demo.ComplexRequest
 import com.cxf.demo.ComplexChild
+import com.cxf.demo.fault.ComplexContrivedException
 
 class ComplexService {
 
@@ -31,5 +32,9 @@ class ComplexService {
         response.childCount = response?.children?.size() ?: 0
         response.message = "Oops we propagated twice!"
         response
+    }
+
+    ComplexResponse complexMethod3(ComplexRequest request) throws ComplexContrivedException {
+        throw new ComplexContrivedException(contrivedMessage: "this is silly")
     }
 }

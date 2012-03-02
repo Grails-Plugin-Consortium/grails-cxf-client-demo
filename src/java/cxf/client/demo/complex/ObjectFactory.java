@@ -24,10 +24,13 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _ComplexContrivedException_QNAME = new QName("http://demo.client.cxf/", "ComplexContrivedException");
     private final static QName _ComplexMethod2Response_QNAME = new QName("http://demo.client.cxf/", "complexMethod2Response");
+    private final static QName _ComplexMethod3Response_QNAME = new QName("http://demo.client.cxf/", "complexMethod3Response");
     private final static QName _ComplexMethod1Response_QNAME = new QName("http://demo.client.cxf/", "complexMethod1Response");
     private final static QName _ComplexMethod2_QNAME = new QName("http://demo.client.cxf/", "complexMethod2");
     private final static QName _ComplexMethod1_QNAME = new QName("http://demo.client.cxf/", "complexMethod1");
+    private final static QName _ComplexMethod3_QNAME = new QName("http://demo.client.cxf/", "complexMethod3");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: cxf.client.demo.complex
@@ -61,11 +64,35 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ComplexMethod3 }
+     * 
+     */
+    public ComplexMethod3 createComplexMethod3() {
+        return new ComplexMethod3();
+    }
+
+    /**
      * Create an instance of {@link ComplexMethod2Response }
      * 
      */
     public ComplexMethod2Response createComplexMethod2Response() {
         return new ComplexMethod2Response();
+    }
+
+    /**
+     * Create an instance of {@link ComplexContrivedException }
+     * 
+     */
+    public ComplexContrivedException createComplexContrivedException() {
+        return new ComplexContrivedException();
+    }
+
+    /**
+     * Create an instance of {@link ComplexMethod3Response }
+     * 
+     */
+    public ComplexMethod3Response createComplexMethod3Response() {
+        return new ComplexMethod3Response();
     }
 
     /**
@@ -93,12 +120,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ComplexContrivedException }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://demo.client.cxf/", name = "ComplexContrivedException")
+    public JAXBElement<ComplexContrivedException> createComplexContrivedException(ComplexContrivedException value) {
+        return new JAXBElement<ComplexContrivedException>(_ComplexContrivedException_QNAME, ComplexContrivedException.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ComplexMethod2Response }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://demo.client.cxf/", name = "complexMethod2Response")
     public JAXBElement<ComplexMethod2Response> createComplexMethod2Response(ComplexMethod2Response value) {
         return new JAXBElement<ComplexMethod2Response>(_ComplexMethod2Response_QNAME, ComplexMethod2Response.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ComplexMethod3Response }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://demo.client.cxf/", name = "complexMethod3Response")
+    public JAXBElement<ComplexMethod3Response> createComplexMethod3Response(ComplexMethod3Response value) {
+        return new JAXBElement<ComplexMethod3Response>(_ComplexMethod3Response_QNAME, ComplexMethod3Response.class, null, value);
     }
 
     /**
@@ -126,6 +171,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://demo.client.cxf/", name = "complexMethod1")
     public JAXBElement<ComplexMethod1> createComplexMethod1(ComplexMethod1 value) {
         return new JAXBElement<ComplexMethod1>(_ComplexMethod1_QNAME, ComplexMethod1 .class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ComplexMethod3 }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://demo.client.cxf/", name = "complexMethod3")
+    public JAXBElement<ComplexMethod3> createComplexMethod3(ComplexMethod3 value) {
+        return new JAXBElement<ComplexMethod3>(_ComplexMethod3_QNAME, ComplexMethod3 .class, null, value);
     }
 
 }

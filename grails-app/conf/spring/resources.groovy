@@ -3,18 +3,18 @@ import com.cxf.demo.logging.VerboseCustomLoggingInInterceptor
 import com.cxf.demo.security.CustomSecurityInterceptor
 import com.cxf.demo.logging.CustomLoggingOutInterceptor
 import org.apache.cxf.transports.http.configuration.HTTPClientPolicy
-import com.cxf.demo.fault.CustomFaultOutInterceptorPreLogical
-import com.cxf.demo.fault.CustomFaultOutInterceptorMarshal
-import com.cxf.demo.fault.CustomFaultOutInterceptorPostLogical
-import com.cxf.demo.fault.CustomFaultOutInterceptorPrepareSend
-import com.cxf.demo.fault.CustomFaultOutInterceptorPreProtocol
-import com.cxf.demo.fault.CustomFaultOutInterceptorPreStream
-import com.cxf.demo.fault.CustomFaultOutInterceptorSetup
-import com.cxf.demo.fault.CustomFaultOutInterceptorUserLogical
-import com.cxf.demo.fault.CustomFaultOutInterceptorWrite
-import com.cxf.demo.fault.CustomFaultOutInterceptorPostStream
-import com.cxf.demo.fault.CustomFaultOutInterceptorSend
-import com.cxf.demo.fault.CustomFaultOutInterceptorPostProtocol
+import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorPreLogical
+import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorMarshal
+import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorPostLogical
+import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorPrepareSend
+import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorPreProtocol
+import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorPreStream
+import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorSetup
+import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorUserLogical
+import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorWrite
+import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorPostStream
+import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorSend
+import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorPostProtocol
 
 // Place your Spring DSL code here
 beans = {

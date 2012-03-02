@@ -194,24 +194,24 @@ cxf {
             namespace = "cxf.client.demo.secure"
         }
 
-//        secureServiceClient {
-//            wsdl = "docs/SecureService.wsdl" //only used for wsdl2java script target
-//            namespace = "cxf.client.demo.secure"
-//            clientInterface = cxf.client.demo.secure.SecureServicePortType
-//            secured = true
-//            username = "wsuser"
-//            password = "secret"
-//            serviceEndpointAddress = "${service.secure.url}"
-//            namespace = "cxf.client.demo.secure"
-//        }
-//
-//        //Another real service to use against wsd2java script
-//        stockQuoteClient {
-//            wsdl = "http://www.webservicex.net/stockquote.asmx?WSDL"
-//            clientInterface = net.webservicex.StockQuoteSoap
-//            serviceEndpointAddress = "http://www.webservicex.net/stockquote.asmx"
-//            receiveTimeout = 120000 //2min
-//            connectionTimeout = 120000 //2min
-//        }
+        secureServiceClient {
+            wsdl = "docs/SecureService.wsdl" //only used for wsdl2java script target
+            namespace = "cxf.client.demo.secure"
+            clientInterface = cxf.client.demo.secure.SecureServicePortType
+            secured = true
+            username = "wsuser"
+            password = "secret"
+            serviceEndpointAddress = "${service.secure.url}"
+            namespace = "cxf.client.demo.secure"
+        }
+
+        //Another real service to use against wsd2java script
+        stockQuoteClient {
+            wsdl = "http://www.webservicex.net/stockquote.asmx?WSDL"
+            clientInterface = net.webservicex.StockQuoteSoap
+            serviceEndpointAddress = "http://www.webservicex.net/stockquote.asmx"
+            receiveTimeout = 120000 //2min
+            connectionTimeout = 120000 //2min
+        }
     }
 }

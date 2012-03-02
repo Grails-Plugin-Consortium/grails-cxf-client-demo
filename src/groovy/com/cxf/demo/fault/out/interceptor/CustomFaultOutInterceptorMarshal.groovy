@@ -1,4 +1,4 @@
-package com.cxf.demo.fault
+package com.cxf.demo.fault.out.interceptor
 
 import org.apache.cxf.interceptor.AbstractLoggingInterceptor
 import org.apache.cxf.interceptor.Fault
