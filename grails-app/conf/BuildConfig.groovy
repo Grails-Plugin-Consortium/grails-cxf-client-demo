@@ -49,4 +49,4 @@ grails.project.dependency.resolution = {
     }
 }
 
-grails.plugin.location.'cxf-client' = "../cxf-client"
+//grails.plugin.location.'cxf-client' = "../cxf-client"
