@@ -1,3 +1,4 @@
+<%@ page import="cxf.client.demo.complex.ComplexContrivedException_Exception" %>
 <html>
 <head>
   <title>CXF CLIENT DEMO</title>
@@ -45,6 +46,13 @@
     </fieldset>
   </g:form>
   <br><br>
+  <g:form action="complexServiceFaultDemo" controller="demo" name="complexServiceFaultDemo">
+    <fieldset>
+    <legend>Invoke Complex Service w/Contrived Exception</legend>
+    <div style="width:100%"><g:submitButton name="submitButton" value="Invoke"/></div>
+    </fieldset>
+  </g:form>
+  <br><br>
   <g:form action="secureServiceDemo" controller="demo" name="secureServiceDemo">
     <fieldset>
     <legend>Invoke Secure Service Using Default Interceptor</legend>
@@ -62,7 +70,7 @@
   <br><br>
   <g:form action="insecureServiceDemo" controller="demo" name="insecureServiceDemo">
     <fieldset>
-    <legend>Invoke Secure Service With No Credentials (Exception)</legend>
+    <legend>Invoke Secure Service With No Credentials (SoapFault Exception)</legend>
     <div style="width:100%"><g:submitButton name="submitButton" value="Invoke"/></div>
     </fieldset>
   </g:form>
@@ -83,7 +91,12 @@
         </g:if>
         <g:if test="${serviceException}">
           <BR><BR>
-          <span style="font-weight: bold;">Exception:</span> <span class="name">${serviceException}</span><BR>
+          <span style="font-weight: bold;">Exception:</span> <span class="name">${serviceException?.encodeAsHTML()}</span><BR>
+          <span style="font-weight: bold;">Exception Message:</span> <span class="name">${serviceException?.message?.encodeAsHTML()}</span><BR>
+          <span style="font-weight: bold;">Exception Cause:</span> <span class="name">${serviceException?.cause?.encodeAsHTML()}</span><BR>
+          <g:if test="${serviceException instanceof ComplexContrivedException_Exception}">
+          <span style="font-weight: bold;">Exception Contrived Message:</span> <span class="name">${serviceException?.faultInfo.contrivedMessage?.encodeAsHTML()}</span><BR>
+          </g:if>
         </g:if>
         <g:if test="${simpleRequest1}">
           <BR><BR>

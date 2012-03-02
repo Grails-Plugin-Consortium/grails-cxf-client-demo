@@ -1,9 +1,12 @@
 package com.cxf.demo
 
+import cxf.client.demo.complex.ComplexContrivedException
+import cxf.client.demo.complex.ComplexContrivedException_Exception
 import cxf.client.demo.complex.ComplexServicePortType
 import cxf.client.demo.secure.SecureServicePortType
 import cxf.client.demo.simple.SimpleServicePortType
 import net.webservicex.StockQuoteSoap
+import javax.xml.ws.soap.SOAPFaultException
 
 class DemoController {
 
@@ -24,18 +27,18 @@ class DemoController {
         String stockQuote
         try {
             stockQuote = stockQuoteClient.getQuote("AAPL")
-        } catch(Exception e){
+        } catch (Exception e) {
             stockQuote = e.message
         }
 
         render(view: '/index', model: [stockQuote: stockQuote])
     }
 
-     def stockQuoteDemoJasper = {
+    def stockQuoteDemoJasper = {
         String stockQuote
         try {
             stockQuote = stockQuoteClient.getQuote("AAPL")
-        } catch(Exception e){
+        } catch (Exception e) {
             stockQuote = e.message
         }
 
@@ -48,8 +51,8 @@ class DemoController {
         cxf.client.demo.secure.SimpleResponse response1 = new cxf.client.demo.secure.SimpleResponse()
         try {
             response1 = insecureServiceClient.secureMethod()
-        } catch (Exception e) {
-            serviceException = new Exception("Service invocation threw an error")
+        } catch (SOAPFaultException e) {
+            serviceException = e
         }
 
         render(view: '/index', model: [serviceException: serviceException, simpleRequest1: request1, simpleResponse1: response1])
@@ -134,5 +137,24 @@ class DemoController {
         cxf.client.demo.complex.ComplexResponse response2 = complexServiceClient.complexMethod2(request1)
 
         render(view: '/index', model: [complexRequest1: request1, complexResponse1: response1, complexRequest2: request2, complexResponse2: response2])
+    }
+
+    def complexServiceFaultDemo = {
+        //this will cause a ComplexContrivedException_Exception
+        cxf.client.demo.complex.ComplexRequest request1 = new cxf.client.demo.complex.ComplexRequest(
+                singleChild: new cxf.client.demo.complex.ComplexChild(name: "Child"),
+                propagateCount: 3)
+        cxf.client.demo.complex.ComplexResponse response1 = null
+        def serviceException = null
+        try {
+            response1 = complexServiceClient.complexMethod3(request1)
+        } catch (ComplexContrivedException_Exception e) {
+            serviceException = e
+        } catch (Exception e) {
+            serviceException = e
+        }
+
+
+        render(view: '/index', model: [complexRequest1: request1, complexResponse1: response1, serviceException: serviceException])
     }
 }
