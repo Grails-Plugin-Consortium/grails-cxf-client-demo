@@ -64,8 +64,8 @@ class DemoController {
         cxf.client.demo.secure.SimpleResponse response1 = new cxf.client.demo.secure.SimpleResponse()
         try {
             response1 = customSecureServiceClient.secureMethod()
-        } catch (Exception e) {
-            serviceException = new Exception("Service invocation threw an error")
+        } catch (SOAPFaultException e) {
+            serviceException = e
         }
 
         render(view: '/index', model: [serviceException: serviceException, simpleRequest1: request1, simpleResponse1: response1])
@@ -77,8 +77,8 @@ class DemoController {
         cxf.client.demo.secure.SimpleResponse response1 = new cxf.client.demo.secure.SimpleResponse()
         try {
             response1 = customSecureServiceOutClient.secureMethod()
-        } catch (Exception e) {
-            serviceException = new Exception("Service invocation threw an error")
+        } catch (SOAPFaultException e) {
+            serviceException = e
         }
 
         render(view: '/index', model: [serviceException: serviceException, simpleRequest1: request1, simpleResponse1: response1])
@@ -150,10 +150,9 @@ class DemoController {
             response1 = complexServiceClient.complexMethod3(request1)
         } catch (ComplexContrivedException_Exception e) {
             serviceException = e
-        } catch (Exception e) {
+        } catch (SOAPFaultException e) {
             serviceException = e
         }
-
 
         render(view: '/index', model: [complexRequest1: request1, complexResponse1: response1, serviceException: serviceException])
     }

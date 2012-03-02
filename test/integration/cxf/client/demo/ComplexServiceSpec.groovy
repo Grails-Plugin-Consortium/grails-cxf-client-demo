@@ -2,6 +2,7 @@ package cxf.client.demo
 
 import grails.plugin.spock.IntegrationSpec
 import com.cxf.demo.ComplexChild
+import com.cxf.demo.fault.ComplexContrivedException
 
 /**
  */
@@ -34,5 +35,17 @@ class ComplexServiceSpec extends IntegrationSpec {
         serviceResponse.childCount > 3
         serviceResponse.message == "Oops we propagated twice!"
         serviceResponse.children.size() > 0
+    }
+
+    def "invoke a method that throws a checked exception"() {
+        given:
+        com.cxf.demo.ComplexRequest serviceRequest = new com.cxf.demo.ComplexRequest(propagateCount: 3, taskName: "helloWorld", singleChild: new ComplexChild(name: "child"))
+
+        when:
+        com.cxf.demo.ComplexResponse serviceResponse = complexService.complexMethod3(serviceRequest)
+
+        then:
+        !serviceResponse
+        thrown(ComplexContrivedException)
     }
 }
