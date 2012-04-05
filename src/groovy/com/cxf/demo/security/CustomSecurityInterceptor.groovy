@@ -1,20 +1,21 @@
 package com.cxf.demo.security
 
 import com.grails.cxf.client.CxfClientInterceptor
-import javax.security.auth.callback.Callback
-import javax.security.auth.callback.CallbackHandler
-import javax.security.auth.callback.UnsupportedCallbackException
+
 import org.apache.cxf.ws.security.wss4j.WSS4JOutInterceptor
 import org.apache.ws.security.WSPasswordCallback
 import org.apache.ws.security.handler.WSHandlerConstants
-import cxf.client.demo.simple.SimpleServicePortType
+
+import javax.security.auth.callback.Callback
+import javax.security.auth.callback.CallbackHandler
+import javax.security.auth.callback.UnsupportedCallbackException
 
 /**
  */
 class CustomSecurityInterceptor implements CxfClientInterceptor {
 
-    def pass
-    def user
+    String pass
+    String user
 
     WSS4JOutInterceptor create() {
         Map<String, Object> outProps = [:]
@@ -26,11 +27,13 @@ class CustomSecurityInterceptor implements CxfClientInterceptor {
             void handle(Callback[] callbacks) throws IOException, UnsupportedCallbackException {
                 WSPasswordCallback pc = (WSPasswordCallback) callbacks[0]
                 pc.password = pass
+                pc.identifier = user
             }
         })
 
         new WSS4JOutInterceptor(outProps)
     }
+}
 
 //    WSS4JOutInterceptor create() {
 //        Map<String, Object> outProps = [:]
@@ -60,4 +63,4 @@ class CustomSecurityInterceptor implements CxfClientInterceptor {
 //
 //        new WSS4JOutInterceptor(outProps)
 //    }
-}
+//}
