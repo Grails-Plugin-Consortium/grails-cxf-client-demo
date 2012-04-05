@@ -171,22 +171,22 @@ cxf {
             clientInterface = cxf.client.demo.secure.SecureServicePortType
             secured = true
             securityInterceptor = 'myCustomInterceptor'
-            outFaultInterceptors = [
-                    'customFaultOutInterceptorSetup',
-                    'customFaultOutInterceptorPreLogical',
-                    'customFaultOutInterceptorUserLogical',
-                    'customFaultOutInterceptorPostLogical',
-                    'customFaultOutInterceptorPrepareSend',
-                    'customFaultOutInterceptorPreStream',
-                    'customFaultOutInterceptorPreProtocol',
-                    'customFaultOutInterceptorWrite',
-                    'customFaultOutInterceptorMarshal',
-                    'customFaultOutInterceptorPreProtocol',
-                    'customFaultOutInterceptorPostProtocol',
-                    'customFaultOutInterceptorPreStream',
-                    'customFaultOutInterceptorPostStream',
-                    'customFaultOutInterceptorSend'
-            ]
+//            outFaultInterceptors = [
+//                    'customFaultOutInterceptorSetup',
+//                    'customFaultOutInterceptorPreLogical',
+//                    'customFaultOutInterceptorUserLogical',
+//                    'customFaultOutInterceptorPostLogical',
+//                    'customFaultOutInterceptorPrepareSend',
+//                    'customFaultOutInterceptorPreStream',
+//                    'customFaultOutInterceptorPreProtocol',
+//                    'customFaultOutInterceptorWrite',
+//                    'customFaultOutInterceptorMarshal',
+//                    'customFaultOutInterceptorPreProtocol',
+//                    'customFaultOutInterceptorPostProtocol',
+//                    'customFaultOutInterceptorPreStream',
+//                    'customFaultOutInterceptorPostStream',
+//                    'customFaultOutInterceptorSend'
+//            ]
             outInterceptors = 'customLoggingOutInterceptor' //can use single item, comma separated list or groovy list
             inInterceptors = ['customLoggingInInterceptor', 'verboseLoggingInInterceptor'] //can use single item, comma separated list or groovy list
             enableDefaultLoggingInterceptors = true //true by default (redundant)

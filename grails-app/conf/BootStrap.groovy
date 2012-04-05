@@ -20,7 +20,7 @@ class BootStrap {
 
             void handle(Callback[] callbacks) throws IOException, UnsupportedCallbackException {
                 WSPasswordCallback pc = (WSPasswordCallback) callbacks[0]
-                if(pc.identifier == "ususer" && pc.password != "secret") {
+                if(pc.identifier == "wsuser" && pc.password != "secret") {
                     println "error :: wrong password"
                     throw new IOException("wrong password")
                 }

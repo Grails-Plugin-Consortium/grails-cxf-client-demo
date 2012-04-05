@@ -18,6 +18,7 @@ import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorPostProtocol
 
 // Place your Spring DSL code here
 beans = {
+
     myCustomInterceptor(CustomSecurityInterceptor) {
         user = "wsuser"
         pass = "secret"
