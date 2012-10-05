@@ -35,6 +35,7 @@ grails.project.dependency.resolution = {
                 exportLibs
 
         compile ":cxf:1.0.0"
+        compile ":cxf-client:1.4.0"
 
         test name: 'spock',
              version: '0.6',
