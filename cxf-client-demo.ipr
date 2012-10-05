@@ -431,10 +431,10 @@
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="ProjectRunConfigurationManager">
-    <configuration default="false" name="Integration Tests" type="GrailsRunConfigurationType" factoryName="Grails">
+    <configuration default="false" name="All Tests" type="GrailsRunConfigurationType" factoryName="Grails">
       <module name="cxf-client-demo" />
       <setting name="vmparams" value="-Dserver.port=9090" />
-      <setting name="cmdLine" value="test-app integration:  -echoOut" />
+      <setting name="cmdLine" value="test-app -echoOut -inline" />
       <setting name="depsClasspath" value="true" />
       <setting name="passParentEnv" value="true" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -445,6 +445,7 @@
         <option name="localRepository" value="" />
         <option name="mavenHome" value="" />
         <option name="nonRecursive" value="false" />
+        <option name="outputLevel" value="INFO" />
         <option name="pluginUpdatePolicy" value="DO_NOT_UPDATE" />
         <option name="printErrorStackTraces" value="false" />
         <option name="snapshotUpdatePolicy" value="ALWAYS_UPDATE" />
@@ -452,13 +453,7 @@
         <option name="userSettingsFile" value="" />
         <option name="workOffline" value="false" />
       </MavenGeneralSettings>
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="2600" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method>
         <option name="Make" enabled="false" />
@@ -478,6 +473,7 @@
         <option name="localRepository" value="" />
         <option name="mavenHome" value="" />
         <option name="nonRecursive" value="false" />
+        <option name="outputLevel" value="INFO" />
         <option name="pluginUpdatePolicy" value="DO_NOT_UPDATE" />
         <option name="printErrorStackTraces" value="false" />
         <option name="snapshotUpdatePolicy" value="ALWAYS_UPDATE" />
@@ -491,10 +487,10 @@
         <option name="Make" enabled="false" />
       </method>
     </configuration>
-    <configuration default="false" name="All Tests" type="GrailsRunConfigurationType" factoryName="Grails">
+    <configuration default="false" name="Integration Tests" type="GrailsRunConfigurationType" factoryName="Grails">
       <module name="cxf-client-demo" />
       <setting name="vmparams" value="-Dserver.port=9090" />
-      <setting name="cmdLine" value="test-app -echoOut -inline" />
+      <setting name="cmdLine" value="test-app integration:  -echoOut" />
       <setting name="depsClasspath" value="true" />
       <setting name="passParentEnv" value="true" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -505,6 +501,7 @@
         <option name="localRepository" value="" />
         <option name="mavenHome" value="" />
         <option name="nonRecursive" value="false" />
+        <option name="outputLevel" value="INFO" />
         <option name="pluginUpdatePolicy" value="DO_NOT_UPDATE" />
         <option name="printErrorStackTraces" value="false" />
         <option name="snapshotUpdatePolicy" value="ALWAYS_UPDATE" />
@@ -512,7 +509,13 @@
         <option name="userSettingsFile" value="" />
         <option name="workOffline" value="false" />
       </MavenGeneralSettings>
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="2600" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method>
         <option name="Make" enabled="false" />

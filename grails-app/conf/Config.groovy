@@ -215,3 +215,22 @@ cxf {
         }
     }
 }
+
+
+coverage {
+    xml = true
+    exclusions = ["**/*Tests*"]
+}
+
+codenarc {
+    processTestUnit = false
+    processTestIntegration = false
+    propertiesFile = 'codenarc.properties'
+    ruleSetFiles = "file:grails-app/conf/codenarc.groovy"
+    reports = {
+        CxfClientReport('xml') {                    // The report name "MyXmlReport" is user-defined; Report type is 'xml'
+            outputFile = 'target/codenarc.xml'      // Set the 'outputFile' property of the (XML) Report
+            title = 'Grails CXF Client Plugin Demo'             // Set the 'title' property of the (XML) Report
+        }
+    }
+}

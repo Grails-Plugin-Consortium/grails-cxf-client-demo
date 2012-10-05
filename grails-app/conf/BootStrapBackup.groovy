@@ -7,7 +7,7 @@ import javax.security.auth.callback.Callback
 import javax.security.auth.callback.CallbackHandler
 import javax.security.auth.callback.UnsupportedCallbackException
 
-class BootStrap {
+class BootStrapBackup {
 
     def secureServiceFactory
 
