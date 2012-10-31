@@ -9,7 +9,7 @@ grails.project.dependency.resolution = {
     def grailsVersion = '2.1.0'
 
     inherits("global") { }
-    log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
+    log "info" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
 
     repositories {
         grailsPlugins()
@@ -34,24 +34,16 @@ grails.project.dependency.resolution = {
                 group: pluginsGroup,
                 exportLibs
 
-        compile ":cxf:1.0.0"
-        compile ":cxf-client:1.4.0"
+        compile ":cxf:1.0.6"
+        compile ":cxf-client:1.4.7"
+        compile ":spring-security-core:1.2.7.3"
+        compild ":spring-security-acl:1.1.1"
 
-        test name: 'spock',
-             version: '0.6',
-             group: pluginsGroup,
-             exportLibs
-
-        test name: 'code-coverage',
-             version: '1.2.5',
-             group: pluginsGroup,
-             exportLibs
-
-        test name: 'codenarc',
-             version: '0.17',
-             group: pluginsGroup,
-             exportLibs
+        test ":spock:0.6"
+        test ":code-coverage:1.2.5"
+        test ":codenarc:0.17"
     }
 }
 
 //grails.plugin.location.'cxf-client' = "../cxf-client"
+//grails.plugin.location.'cxf' = "../grails-cxf"

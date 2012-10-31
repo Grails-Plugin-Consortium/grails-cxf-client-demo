@@ -92,7 +92,7 @@ log4j = {
         console name: 'stdout', layout: pattern(conversionPattern: '%c{2} %m%n')
     }
 
-    error 'org.codehaus.groovy.grails.web.servlet',  //  controllers
+    info 'org.codehaus.groovy.grails.web.servlet',  //  controllers
           'org.codehaus.groovy.grails.web.pages', //  GSP
           'org.codehaus.groovy.grails.web.sitemesh', //  layouts
           'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
@@ -109,13 +109,13 @@ log4j = {
     warn 'org.mortbay.log'
 
     info 'com.grails.cxf.client'
+    info 'com.grails.cxf'
     info 'org.apache.cxf.interceptor'
     info 'com.cxf.demo.logging'
     info 'com.cxf.demo.fault'
 }
 
 cxf {
-    installDir = "C:/apps/apache-cxf-2.4.2" //only used for wsdl2java script target
     client {
         simpleServiceClient {
             wsdl = "docs/SimpleService.wsdl" //only used for wsdl2java script target
