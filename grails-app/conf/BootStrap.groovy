@@ -7,10 +7,11 @@ import org.apache.ws.security.validate.UsernameTokenValidator
 import org.apache.ws.security.validate.Validator
 
 import javax.xml.namespace.QName
+import org.apache.cxf.frontend.ServerFactoryBean
 
 class BootStrap {
 
-    def secureServiceFactory
+    ServerFactoryBean secureServiceFactory
 
     def init = { servletContext ->
 
@@ -31,6 +32,9 @@ class BootStrap {
         });
         inProps.put(WSS4JInInterceptor.VALIDATOR_MAP, validatorMap);
         secureServiceFactory.getInInterceptors().add(new WSS4JInInterceptor(inProps))
+
+        secureServiceFactory.getProperties(true).put("ws-security.enable.nonce.cache","false")
+        secureServiceFactory.getProperties(true).put("ws-security.enable.timestamp.cache","false")
     }
 
     def destroy = {
