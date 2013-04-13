@@ -182,7 +182,6 @@
         <jarDirectory url="file://$MODULE_DIR$/../grails-cxf/lib" recursive="false" />
       </library>
     </orderEntry>
-    <orderEntry type="module" module-name="cxf-inplacePlugin-grailsPlugins" />
   </component>
 </module>
 

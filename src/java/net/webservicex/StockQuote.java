@@ -58,7 +58,7 @@ public class StockQuote extends Service {
      */
     @WebEndpoint(name = "StockQuoteHttpPost")
     public StockQuoteHttpPost getStockQuoteHttpPost() {
-        return super.getPort(StockQuoteHttpPost, StockQuoteHttpPost.class);
+        return super.getPort(new QName("http://www.webserviceX.NET/", "StockQuoteHttpPost"), StockQuoteHttpPost.class);
     }
 
     /**
@@ -79,7 +79,7 @@ public class StockQuote extends Service {
      */
     @WebEndpoint(name = "StockQuoteSoap")
     public StockQuoteSoap getStockQuoteSoap() {
-        return super.getPort(StockQuoteSoap, StockQuoteSoap.class);
+        return super.getPort( new QName("http://www.webserviceX.NET/", "StockQuoteSoap"), StockQuoteSoap.class);
     }
 
     /**

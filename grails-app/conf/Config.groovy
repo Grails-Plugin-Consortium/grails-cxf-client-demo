@@ -92,7 +92,7 @@ log4j = {
         console name: 'stdout', layout: pattern(conversionPattern: '%c{2} %m%n')
     }
 
-    info 'org.codehaus.groovy.grails.web.servlet',  //  controllers
+    error 'org.codehaus.groovy.grails.web.servlet',  //  controllers
           'org.codehaus.groovy.grails.web.pages', //  GSP
           'org.codehaus.groovy.grails.web.sitemesh', //  layouts
           'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
@@ -108,11 +108,11 @@ log4j = {
 
     warn 'org.mortbay.log'
 
-    info 'com.grails.cxf.client'
-    info 'com.grails.cxf'
-    info 'org.apache.cxf.interceptor'
-    info 'com.cxf.demo.logging'
-    info 'com.cxf.demo.fault'
+    info 'org.apache.cxf'
+
+//    root {
+//        info()
+//    }
 }
 
 cxf {

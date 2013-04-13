@@ -6,7 +6,7 @@ grails.project.dependency.resolution = {
     def exportLibs = { export: false }
     def excludeConflicting = { excludes 'xmlbeans', 'spring-web', 'spring-core', 'xml-apis' }
     def pluginsGroup = 'org.grails.plugins'
-    def grailsVersion = '2.1.0'
+    def grailsVersion = '2.1.3'
 
     inherits("global") { }
     log "info" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
@@ -34,8 +34,8 @@ grails.project.dependency.resolution = {
                 group: pluginsGroup,
                 exportLibs
 
-        compile ":cxf:1.0.6"
-        compile ":cxf-client:1.4.7"
+        compile ":cxf:1.1.1"
+        compile ":cxf-client:1.5.3"
         compile ":spring-security-core:1.2.7.3"
         compild ":spring-security-acl:1.1.1"
 
