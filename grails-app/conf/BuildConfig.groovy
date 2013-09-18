@@ -35,7 +35,7 @@ grails.project.dependency.resolution = {
                 exportLibs
 
         compile ":cxf:1.1.1"
-        compile ":cxf-client:1.5.3"
+        compile ":cxf-client:1.5.6"
         compile ":spring-security-core:1.2.7.3"
         compild ":spring-security-acl:1.1.1"
 

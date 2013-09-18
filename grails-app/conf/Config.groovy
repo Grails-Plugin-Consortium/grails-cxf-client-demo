@@ -70,13 +70,13 @@ environments {
         service.secure.url = "${grails.serverURL}/services/secure"
     }
     development {
-        grails.serverURL = "http://localhost:8080/${appName}"
+        grails.serverURL = "http://localhost:${System.getProperty("server.port", "8080")}/${appName}"
         service.simple.url = "${grails.serverURL}/services/simple"
         service.complex.url = "${grails.serverURL}/services/complex"
         service.secure.url = "${grails.serverURL}/services/secure"
     }
     test {
-        grails.serverURL = "http://localhost:9090/${appName}"
+        grails.serverURL = "http://localhost:${System.getProperty("server.port", "8080")}/${appName}"
         service.simple.url = "${grails.serverURL}/services/simple"
         service.complex.url = "${grails.serverURL}/services/complex"
         service.secure.url = "${grails.serverURL}/services/secure"
