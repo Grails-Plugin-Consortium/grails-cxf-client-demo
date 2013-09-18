@@ -48,7 +48,7 @@
     <content url="file://$USER_HOME$/.grails/2.1.3/projects/cxf-client-demo/plugins/tomcat-2.1.3" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="grails-2.1.3" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="grails-2.3.0" level="application" />
     <orderEntry type="module-library" exported="">
       <library name="Grails User Library (cxf-client-demo-grailsPlugins)">
         <CLASSES>
