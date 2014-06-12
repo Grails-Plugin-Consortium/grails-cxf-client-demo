@@ -1,11 +1,12 @@
 package com.cxf.demo
 
-import cxf.client.demo.complex.ComplexContrivedException
+import cxf.client.demo.authorization.AuthorizationServicePortType
 import cxf.client.demo.complex.ComplexContrivedException_Exception
 import cxf.client.demo.complex.ComplexServicePortType
 import cxf.client.demo.secure.SecureServicePortType
 import cxf.client.demo.simple.SimpleServicePortType
 import net.webservicex.StockQuoteSoap
+
 import javax.xml.ws.soap.SOAPFaultException
 
 class DemoController {
@@ -16,6 +17,7 @@ class DemoController {
     SecureServicePortType secureServiceClient
     SecureServicePortType insecureServiceClient
     SecureServicePortType customSecureServiceClient
+    AuthorizationServicePortType customSecureAuthorizationServiceClient
     SecureServicePortType customSecureServiceOutClient
     StockQuoteSoap stockQuoteClient
 
@@ -69,6 +71,18 @@ class DemoController {
         }
 
         render(view: '/index', model: [serviceException: serviceException, simpleRequest1: request1, simpleResponse1: response1])
+    }
+
+    def customSecureServiceAuthorizationDemo = {
+        def serviceException = null
+        cxf.client.demo.authorization.SimpleResponse response1 = new cxf.client.demo.authorization.SimpleResponse()
+        try {
+            response1 = customSecureAuthorizationServiceClient.secureMethod()
+        } catch (SOAPFaultException e) {
+            serviceException = e
+        }
+
+        render(view: '/index', model: [serviceException: serviceException, simpleRequest1: new SimpleRequest(), simpleResponse1: response1])
     }
 
     def customSecureServiceOutDemo = {

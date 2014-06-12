@@ -1,6 +1,7 @@
 package cxf.client.demo
 
-import grails.plugin.spock.IntegrationSpec
+import grails.test.spock.IntegrationSpec
+
 
 /**
  */

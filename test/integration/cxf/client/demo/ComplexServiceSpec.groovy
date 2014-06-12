@@ -2,7 +2,7 @@ package cxf.client.demo
 
 import com.cxf.demo.ComplexChild
 import com.cxf.demo.fault.ComplexContrivedException
-import grails.plugin.spock.IntegrationSpec
+import grails.test.spock.IntegrationSpec
 
 /**
  */

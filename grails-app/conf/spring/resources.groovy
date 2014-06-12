@@ -2,6 +2,7 @@ import com.cxf.demo.logging.CustomLoggingInInterceptor
 import com.cxf.demo.logging.VerboseCustomLoggingInInterceptor
 import com.cxf.demo.security.CustomSecurityInterceptor
 import com.cxf.demo.logging.CustomLoggingOutInterceptor
+import org.apache.cxf.configuration.security.AuthorizationPolicy
 import org.apache.cxf.transports.http.configuration.HTTPClientPolicy
 import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorPreLogical
 import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorMarshal
@@ -55,5 +56,11 @@ beans = {
         connectionTimeout = 30000
         receiveTimeout = 60000
         allowChunking = false
+    }
+
+    customAuthorizationPolicy(AuthorizationPolicy){
+        userName = 'wsuser'
+        password = 'secret'
+        authorizationType = 'Basic'
     }
 }

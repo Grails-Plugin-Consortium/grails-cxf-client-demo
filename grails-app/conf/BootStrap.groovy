@@ -1,8 +1,11 @@
+import com.sample.ws.BasicAuthAuthorizationInterceptor
 import org.apache.cxf.ws.security.wss4j.WSS4JInInterceptor
 import org.apache.ws.security.WSConstants
 import org.apache.ws.security.WSSecurityEngine
 import org.apache.ws.security.WSSecurityException
+import org.apache.ws.security.handler.RequestData
 import org.apache.ws.security.handler.WSHandlerConstants
+import org.apache.ws.security.message.token.UsernameToken
 import org.apache.ws.security.validate.UsernameTokenValidator
 import org.apache.ws.security.validate.Validator
 
@@ -12,6 +15,7 @@ import org.apache.cxf.frontend.ServerFactoryBean
 class BootStrap {
 
     ServerFactoryBean secureServiceFactory
+    ServerFactoryBean authorizationServiceFactory
 
     def init = { servletContext ->
 
@@ -22,7 +26,7 @@ class BootStrap {
         validatorMap.put(WSSecurityEngine.USERNAME_TOKEN, new UsernameTokenValidator() {
 
             @Override
-            protected void verifyPlaintextPassword(org.apache.ws.security.message.token.UsernameToken usernameToken, org.apache.ws.security.handler.RequestData data) throws org.apache.ws.security.WSSecurityException {
+            protected void verifyPlaintextPassword(UsernameToken usernameToken, RequestData data) throws WSSecurityException {
                 if(data.username == "wsuser" && usernameToken.password != "secret") {
                     throw new WSSecurityException("password mismatch")
                 } else {
@@ -31,10 +35,14 @@ class BootStrap {
             }
         });
         inProps.put(WSS4JInInterceptor.VALIDATOR_MAP, validatorMap);
-        secureServiceFactory.getInInterceptors().add(new WSS4JInInterceptor(inProps))
 
+        secureServiceFactory.inInterceptors.add(new WSS4JInInterceptor(inProps))
         secureServiceFactory.getProperties(true).put("ws-security.enable.nonce.cache","false")
         secureServiceFactory.getProperties(true).put("ws-security.enable.timestamp.cache","false")
+
+        authorizationServiceFactory.inInterceptors.add(new BasicAuthAuthorizationInterceptor())
+        authorizationServiceFactory.getProperties(true).put("ws-security.enable.nonce.cache","false")
+        authorizationServiceFactory.getProperties(true).put("ws-security.enable.timestamp.cache","false")
     }
 
     def destroy = {

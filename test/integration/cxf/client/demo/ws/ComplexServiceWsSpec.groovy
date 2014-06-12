@@ -1,12 +1,10 @@
 package cxf.client.demo.ws
 
+import cxf.client.demo.complex.ComplexContrivedException
 import cxf.client.demo.complex.ComplexContrivedException_Exception
 import cxf.client.demo.complex.ComplexServicePortType
-import javax.jws.WebParam
-import spock.lang.Specification
-import cxf.client.demo.complex.ComplexContrivedException
 import spock.lang.Shared
-import groovy.mock.interceptor.MockFor
+import spock.lang.Specification
 
 /**
  */
@@ -19,7 +17,7 @@ class ComplexServiceWsSpec extends Specification {
         //Mock(ComplexServicePortType)
         complexServiceClient = [complexMethod3: {
             cxf.client.demo.complex.ComplexRequest request ->
-            throw new ComplexContrivedException_Exception("this is silly1", new ComplexContrivedException(contrivedMessage: "this is silly2"))
+                throw new ComplexContrivedException_Exception("this is silly1", new ComplexContrivedException(contrivedMessage: "this is silly2"))
         }] as ComplexServicePortType
     }
 

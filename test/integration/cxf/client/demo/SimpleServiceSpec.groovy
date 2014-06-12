@@ -4,7 +4,8 @@ import cxf.client.demo.ComplexService
 import cxf.client.demo.SimpleService
 import cxf.client.demo.complex.ComplexServicePortType
 import cxf.client.demo.simple.SimpleServicePortType
-import grails.plugin.spock.IntegrationSpec
+import grails.test.spock.IntegrationSpec
+
 
 /**
  */

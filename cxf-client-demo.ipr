@@ -31,9 +31,7 @@
       </profile>
     </annotationProcessing>
   </component>
-  <component name="CopyrightManager" default="">
-    <module2copyright />
-  </component>
+  <component name="CopyrightManager" default="" />
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
@@ -287,7 +285,12 @@
     <option name="myDefaultNotNull" value="org.jetbrains.annotations.NotNull" />
     <option name="myNullables">
       <value>
-        <list size="0" />
+        <list size="4">
+          <item index="0" class="java.lang.String" itemvalue="org.jetbrains.annotations.Nullable" />
+          <item index="1" class="java.lang.String" itemvalue="javax.annotation.Nullable" />
+          <item index="2" class="java.lang.String" itemvalue="edu.umd.cs.findbugs.annotations.Nullable" />
+          <item index="3" class="java.lang.String" itemvalue="android.support.annotation.Nullable" />
+        </list>
       </value>
     </option>
     <option name="myNotNulls">
@@ -426,6 +429,7 @@
       <module fileurl="file://$PROJECT_DIR$/cxf-client-demo.iml" filepath="$PROJECT_DIR$/cxf-client-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/cxf-client-demo-grailsPlugins.iml" filepath="$PROJECT_DIR$/cxf-client-demo-grailsPlugins.iml" />
       <module fileurl="file://$PROJECT_DIR$/cxf-inplacePlugin.iml" filepath="$PROJECT_DIR$/cxf-inplacePlugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cxf-inplacePlugin-grailsPlugins.iml" filepath="$PROJECT_DIR$/cxf-inplacePlugin-grailsPlugins.iml" />
     </modules>
   </component>
   <component name="ProjectResources">
@@ -453,11 +457,18 @@
         <option name="outputLevel" value="INFO" />
         <option name="pluginUpdatePolicy" value="DO_NOT_UPDATE" />
         <option name="printErrorStackTraces" value="false" />
+        <option name="threads" />
         <option name="usePluginRegistry" value="false" />
         <option name="userSettingsFile" value="" />
         <option name="workOffline" value="false" />
       </MavenGeneralSettings>
+      <RunnerSettings RunnerId="GrailsMavenDebuggerRunner">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="GrailsMavenDebuggerRunner" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -479,6 +490,7 @@
         <option name="outputLevel" value="INFO" />
         <option name="pluginUpdatePolicy" value="DO_NOT_UPDATE" />
         <option name="printErrorStackTraces" value="false" />
+        <option name="threads" />
         <option name="usePluginRegistry" value="false" />
         <option name="userSettingsFile" value="" />
         <option name="workOffline" value="false" />
@@ -505,6 +517,7 @@
         <option name="outputLevel" value="INFO" />
         <option name="pluginUpdatePolicy" value="DO_NOT_UPDATE" />
         <option name="printErrorStackTraces" value="false" />
+        <option name="threads" />
         <option name="usePluginRegistry" value="false" />
         <option name="userSettingsFile" value="" />
         <option name="workOffline" value="false" />
@@ -516,6 +529,39 @@
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Run App" type="GrailsRunConfigurationType" factoryName="Grails">
+      <module name="cxf-client-demo" />
+      <setting name="vmparams" value="-Dserver.port=9090" />
+      <setting name="cmdLine" value="run-app -echoOut" />
+      <setting name="depsClasspath" value="true" />
+      <setting name="passParentEnv" value="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <setting name="launchBrowser" value="false" />
+      <MavenGeneralSettings>
+        <option name="alwaysUpdateSnapshots" value="false" />
+        <option name="checksumPolicy" value="FAIL" />
+        <option name="failureBehavior" value="FAST" />
+        <option name="localRepository" value="" />
+        <option name="mavenHome" value="" />
+        <option name="nonRecursive" value="false" />
+        <option name="outputLevel" value="INFO" />
+        <option name="pluginUpdatePolicy" value="DO_NOT_UPDATE" />
+        <option name="printErrorStackTraces" value="false" />
+        <option name="threads" />
+        <option name="usePluginRegistry" value="false" />
+        <option name="userSettingsFile" value="" />
+        <option name="workOffline" value="false" />
+      </MavenGeneralSettings>
+      <RunnerSettings RunnerId="GrailsMavenDebuggerRunner">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="GrailsMavenDebuggerRunner" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
