@@ -30,39 +30,39 @@ cxf:
             serviceEndpointAddress: http://localhost:8080/services/complex
             namespace: cxf.client.demo.complex
             receiveTimeout: 120000 #2min
-#        insecureServiceClient:
-#            wsdl: docs/SecureService.wsdl #only used for wsdl2java script target
-#            namespace: cxf.client.demo.secure
-#            clientInterface: cxf.client.demo.secure.SecureServicePortType
-#            secured: false
-#            serviceEndpointAddress: http://localhost:8080/services/secure
-#        customSecureServiceClient:
-#            wsdl: docs/SecureService.wsdl #only used for wsdl2java script target
-#            namespace: cxf.client.demo.secure
-#            clientInterface: cxf.client.demo.secure.SecureServicePortType
-#            secured: true
-#            securityInterceptor: myCustomInterceptor
-#            serviceEndpointAddress: http://localhost:8080/services/secure
-#        customSecureServiceOutClient:
-#            wsdl: docs/SecureService.wsdl #only used for wsdl2java script target
-#            namespace: cxf.client.demo.secure
-#            clientInterface: cxf.client.demo.secure.SecureServicePortType
-#            secured: true
-#            securityInterceptor: myCustomInterceptor
-#            outInterceptors: customLoggingOutInterceptor #can use single item, comma separated list or groovy list
-#            inInterceptors:
-#              - customLoggingInInterceptor
-#              - verboseLoggingInInterceptor
-#            enableDefaultLoggingInterceptors: true #true by default (redundant)
-#            serviceEndpointAddress: http://localhost:8080/services/secure
-#        secureServiceClient:
-#            wsdl: docs/SecureService.wsdl #only used for wsdl2java script target
-#            namespace: cxf.client.demo.secure
-#            clientInterface: cxf.client.demo.secure.SecureServicePortType
-#            secured: true
-#            username: wsuser
-#            password: secret
-#            serviceEndpointAddress: http://localhost:8080/services/secure
+        insecureServiceClient:
+            wsdl: docs/SecureService.wsdl #only used for wsdl2java script target
+            namespace: cxf.client.demo.secure
+            clientInterface: cxf.client.demo.secure.SecureServicePortType
+            secured: false
+            serviceEndpointAddress: http://localhost:8080/services/secure
+        customSecureServiceClient:
+            wsdl: docs/SecureService.wsdl
+            namespace: cxf.client.demo.secure
+            clientInterface: cxf.client.demo.secure.SecureServicePortType
+            secured: true
+            securityInterceptor: myCustomInterceptor
+            serviceEndpointAddress: http://localhost:8080/services/secure
+        customSecureServiceOutClient:
+            wsdl: docs/SecureService.wsdl #only used for wsdl2java script target
+            namespace: cxf.client.demo.secure
+            clientInterface: cxf.client.demo.secure.SecureServicePortType
+            secured: true
+            securityInterceptor: myCustomInterceptor
+            outInterceptors: customLoggingOutInterceptor #can use single item, comma separated list or groovy list
+            inInterceptors:
+              - customLoggingInInterceptor
+              - verboseLoggingInInterceptor
+            enableDefaultLoggingInterceptors: true #true by default (redundant)
+            serviceEndpointAddress: http://localhost:8080/services/secure
+        secureServiceClient:
+            wsdl: docs/SecureService.wsdl #only used for wsdl2java script target
+            namespace: cxf.client.demo.secure
+            clientInterface: cxf.client.demo.secure.SecureServicePortType
+            secured: true
+            username: wsuser
+            password: secret
+            serviceEndpointAddress: http://localhost:8080/services/secure
         stockQuoteClient:
             wsdl: http://www.webservicex.net/stockquote.asmx?WSDL
             clientInterface: net.webservicex.StockQuoteSoap

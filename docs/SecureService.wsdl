@@ -1,45 +1,35 @@
-
-<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://demo.client.cxf/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="SecureServiceService" targetNamespace="http://demo.client.cxf/">
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="SecureServiceService" targetNamespace="http://demo.client.cxf/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://demo.client.cxf/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
   <wsdl:types>
-    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://demo.client.cxf/" elementFormDefault="unqualified" targetNamespace="http://demo.client.cxf/" version="1.0">
-
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://demo.client.cxf/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
       <xs:element name="secureMethod" type="tns:secureMethod"/>
-
       <xs:element name="secureMethodResponse" type="tns:secureMethodResponse"/>
-
       <xs:complexType name="secureMethod">
         <xs:sequence/>
       </xs:complexType>
-
       <xs:complexType name="secureMethodResponse">
         <xs:sequence>
-          <xs:element minOccurs="0" name="return" type="tns:simpleResponse"/>
+          <xs:element minOccurs="0" name="SimpleResponse" type="tns:simpleResponse"/>
         </xs:sequence>
       </xs:complexType>
-
       <xs:complexType name="simpleResponse">
         <xs:sequence>
           <xs:element minOccurs="0" name="isOld" type="xs:boolean"/>
           <xs:element minOccurs="0" name="status" type="xs:string"/>
         </xs:sequence>
       </xs:complexType>
-
     </xs:schema>
   </wsdl:types>
   <wsdl:message name="secureMethod">
-    <wsdl:part element="tns:secureMethod" name="parameters">
-    </wsdl:part>
+    <wsdl:part element="tns:secureMethod" name="parameters"/>
   </wsdl:message>
   <wsdl:message name="secureMethodResponse">
-    <wsdl:part element="tns:secureMethodResponse" name="parameters">
-    </wsdl:part>
+    <wsdl:part element="tns:secureMethodResponse" name="parameters"/>
   </wsdl:message>
   <wsdl:portType name="SecureService">
     <wsdl:operation name="secureMethod">
-      <wsdl:input message="tns:secureMethod" name="secureMethod">
-      </wsdl:input>
-      <wsdl:output message="tns:secureMethodResponse" name="secureMethodResponse">
-      </wsdl:output>
+      <wsdl:input message="tns:secureMethod" name="secureMethod"/>
+      <wsdl:output message="tns:secureMethodResponse" name="secureMethodResponse"/>
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="SecureServiceServiceSoapBinding" type="tns:SecureService">

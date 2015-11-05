@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="return" type="{http://demo.client.cxf/}simpleResponse" minOccurs="0"/&gt;
+ *         &lt;element name="SimpleResponse" type="{http://demo.client.cxf/}simpleResponse" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -28,35 +28,35 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "simpleMethod2Response", propOrder = {
-    "_return"
+    "simpleResponse"
 })
 public class SimpleMethod2Response {
 
-    @XmlElement(name = "return")
-    protected SimpleResponse _return;
+    @XmlElement(name = "SimpleResponse")
+    protected SimpleResponse simpleResponse;
 
     /**
-     * Gets the value of the return property.
+     * Gets the value of the simpleResponse property.
      * 
      * @return
      *     possible object is
      *     {@link SimpleResponse }
      *     
      */
-    public SimpleResponse getReturn() {
-        return _return;
+    public SimpleResponse getSimpleResponse() {
+        return simpleResponse;
     }
 
     /**
-     * Sets the value of the return property.
+     * Sets the value of the simpleResponse property.
      * 
      * @param value
      *     allowed object is
      *     {@link SimpleResponse }
      *     
      */
-    public void setReturn(SimpleResponse value) {
-        this._return = value;
+    public void setSimpleResponse(SimpleResponse value) {
+        this.simpleResponse = value;
     }
 
 }

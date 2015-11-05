@@ -35,19 +35,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SecureMethodResponse }
-     * 
-     */
-    public SecureMethodResponse createSecureMethodResponse() {
-        return new SecureMethodResponse();
-    }
-
-    /**
      * Create an instance of {@link SecureMethod }
      * 
      */
     public SecureMethod createSecureMethod() {
         return new SecureMethod();
+    }
+
+    /**
+     * Create an instance of {@link SecureMethodResponse }
+     * 
+     */
+    public SecureMethodResponse createSecureMethodResponse() {
+        return new SecureMethodResponse();
     }
 
     /**

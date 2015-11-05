@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="arg0" type="{http://demo.client.cxf/}complexRequest" minOccurs="0"/&gt;
+ *         &lt;element name="complexRequest" type="{http://demo.client.cxf/}complexRequest" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -27,34 +27,34 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "complexMethod2", propOrder = {
-    "arg0"
+    "complexRequest"
 })
 public class ComplexMethod2 {
 
-    protected ComplexRequest arg0;
+    protected ComplexRequest complexRequest;
 
     /**
-     * Gets the value of the arg0 property.
+     * Gets the value of the complexRequest property.
      * 
      * @return
      *     possible object is
      *     {@link ComplexRequest }
      *     
      */
-    public ComplexRequest getArg0() {
-        return arg0;
+    public ComplexRequest getComplexRequest() {
+        return complexRequest;
     }
 
     /**
-     * Sets the value of the arg0 property.
+     * Sets the value of the complexRequest property.
      * 
      * @param value
      *     allowed object is
      *     {@link ComplexRequest }
      *     
      */
-    public void setArg0(ComplexRequest value) {
-        this.arg0 = value;
+    public void setComplexRequest(ComplexRequest value) {
+        this.complexRequest = value;
     }
 
 }

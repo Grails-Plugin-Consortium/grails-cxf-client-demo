@@ -7,12 +7,15 @@ import com.cxf.demo.fault.ComplexContrivedException
 import org.grails.cxf.utils.GrailsCxfEndpoint
 
 import javax.jws.WebMethod
+import javax.jws.WebParam
+import javax.jws.WebResult
 
 @GrailsCxfEndpoint
 class ComplexService {
 
     @WebMethod
-    ComplexResponse complexMethod1(ComplexRequest request) {
+    @WebResult(name='ComplexResponse')
+    ComplexResponse complexMethod1(@WebParam(name='complexRequest') ComplexRequest request) {
         ComplexResponse response = new ComplexResponse()
         response.children = []
         request?.propagateCount?.times {
@@ -24,7 +27,8 @@ class ComplexService {
     }
 
     @WebMethod
-    ComplexResponse complexMethod2(ComplexRequest request) {
+    @WebResult(name='ComplexResponse')
+    ComplexResponse complexMethod2(@WebParam(name='complexRequest') ComplexRequest request) {
         ComplexResponse response = new ComplexResponse()
         response.children = []
         request?.propagateCount?.times {
@@ -39,7 +43,8 @@ class ComplexService {
     }
 
     @WebMethod
-    ComplexResponse complexMethod3(ComplexRequest request) throws ComplexContrivedException {
+    @WebResult(name='ComplexResponse')
+    ComplexResponse complexMethod3(@WebParam(name='complexRequest') ComplexRequest request) throws ComplexContrivedException {
         throw new ComplexContrivedException(contrivedMessage: "this is silly")
     }
 }

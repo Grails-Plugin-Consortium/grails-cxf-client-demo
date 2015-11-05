@@ -9,7 +9,7 @@
             </xs:complexType>
             <xs:complexType name="secureMethodResponse">
                 <xs:sequence>
-                    <xs:element minOccurs="0" name="return" type="tns:simpleResponse"/>
+                    <xs:element minOccurs="0" name="SimpleResponse" type="tns:simpleResponse"/>
                 </xs:sequence>
             </xs:complexType>
             <xs:complexType name="simpleResponse">

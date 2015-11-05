@@ -8,7 +8,7 @@
             <xs:element name="simpleMethod2Response" type="tns:simpleMethod2Response"/>
             <xs:complexType name="simpleMethod2">
                 <xs:sequence>
-                    <xs:element minOccurs="0" name="arg0" type="tns:simpleRequest"/>
+                    <xs:element minOccurs="0" name="simpleRequest" type="tns:simpleRequest"/>
                 </xs:sequence>
             </xs:complexType>
             <xs:complexType name="simpleRequest">
@@ -19,7 +19,7 @@
             </xs:complexType>
             <xs:complexType name="simpleMethod2Response">
                 <xs:sequence>
-                    <xs:element minOccurs="0" name="return" type="tns:simpleResponse"/>
+                    <xs:element minOccurs="0" name="SimpleResponse" type="tns:simpleResponse"/>
                 </xs:sequence>
             </xs:complexType>
             <xs:complexType name="simpleResponse">
@@ -30,12 +30,12 @@
             </xs:complexType>
             <xs:complexType name="simpleMethod1">
                 <xs:sequence>
-                    <xs:element minOccurs="0" name="arg0" type="tns:simpleRequest"/>
+                    <xs:element minOccurs="0" name="simpleRequest" type="tns:simpleRequest"/>
                 </xs:sequence>
             </xs:complexType>
             <xs:complexType name="simpleMethod1Response">
                 <xs:sequence>
-                    <xs:element minOccurs="0" name="return" type="tns:simpleResponse"/>
+                    <xs:element minOccurs="0" name="SimpleResponse" type="tns:simpleResponse"/>
                 </xs:sequence>
             </xs:complexType>
         </xs:schema>

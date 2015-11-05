@@ -13,50 +13,50 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="secureMethodResponse">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="return" type="{http://demo.client.cxf/}simpleResponse" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="secureMethodResponse"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="SimpleResponse" type="{http://demo.client.cxf/}simpleResponse" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "secureMethodResponse", propOrder = {
-    "_return"
+    "simpleResponse"
 })
 public class SecureMethodResponse {
 
-    @XmlElement(name = "return")
-    protected SimpleResponse _return;
+    @XmlElement(name = "SimpleResponse")
+    protected SimpleResponse simpleResponse;
 
     /**
-     * Gets the value of the return property.
+     * Gets the value of the simpleResponse property.
      * 
      * @return
      *     possible object is
      *     {@link SimpleResponse }
      *     
      */
-    public SimpleResponse getReturn() {
-        return _return;
+    public SimpleResponse getSimpleResponse() {
+        return simpleResponse;
     }
 
     /**
-     * Sets the value of the return property.
+     * Sets the value of the simpleResponse property.
      * 
      * @param value
      *     allowed object is
      *     {@link SimpleResponse }
      *     
      */
-    public void setReturn(SimpleResponse value) {
-        this._return = value;
+    public void setSimpleResponse(SimpleResponse value) {
+        this.simpleResponse = value;
     }
 
 }

@@ -18,9 +18,9 @@ class CustomSecurityInterceptor implements CxfClientInterceptor {
 
 	WSS4JOutInterceptor create() {
 		Map<String, Object> outProps = [:]
-		outProps.put(WSHandlerConstants.ACTION, org.apache.ws.security.handler.WSHandlerConstants.USERNAME_TOKEN)
+		outProps.put(WSHandlerConstants.ACTION, WSHandlerConstants.USERNAME_TOKEN)
 		outProps.put(WSHandlerConstants.USER, user)
-		outProps.put(WSHandlerConstants.PASSWORD_TYPE, org.apache.ws.security.WSConstants.PW_TEXT)
+		outProps.put(WSHandlerConstants.PASSWORD_TYPE, "PasswordText")
 		outProps.put(WSHandlerConstants.PW_CALLBACK_REF, new CallbackHandler() {
 
 			void handle(Callback[] callbacks) throws IOException, UnsupportedCallbackException {

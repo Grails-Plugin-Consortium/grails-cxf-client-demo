@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="return" type="{http://demo.client.cxf/}complexResponse" minOccurs="0"/&gt;
+ *         &lt;element name="ComplexResponse" type="{http://demo.client.cxf/}complexResponse" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -28,35 +28,35 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "complexMethod1Response", propOrder = {
-    "_return"
+    "complexResponse"
 })
 public class ComplexMethod1Response {
 
-    @XmlElement(name = "return")
-    protected ComplexResponse _return;
+    @XmlElement(name = "ComplexResponse")
+    protected ComplexResponse complexResponse;
 
     /**
-     * Gets the value of the return property.
+     * Gets the value of the complexResponse property.
      * 
      * @return
      *     possible object is
      *     {@link ComplexResponse }
      *     
      */
-    public ComplexResponse getReturn() {
-        return _return;
+    public ComplexResponse getComplexResponse() {
+        return complexResponse;
     }
 
     /**
-     * Sets the value of the return property.
+     * Sets the value of the complexResponse property.
      * 
      * @param value
      *     allowed object is
      *     {@link ComplexResponse }
      *     
      */
-    public void setReturn(ComplexResponse value) {
-        this._return = value;
+    public void setComplexResponse(ComplexResponse value) {
+        this.complexResponse = value;
     }
 
 }

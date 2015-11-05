@@ -10,7 +10,7 @@
             <xs:element name="complexMethod3Response" type="tns:complexMethod3Response"/>
             <xs:complexType name="complexMethod1">
                 <xs:sequence>
-                    <xs:element minOccurs="0" name="arg0" type="tns:complexRequest"/>
+                    <xs:element minOccurs="0" name="complexRequest" type="tns:complexRequest"/>
                 </xs:sequence>
             </xs:complexType>
             <xs:complexType name="complexRequest">
@@ -27,7 +27,7 @@
             </xs:complexType>
             <xs:complexType name="complexMethod1Response">
                 <xs:sequence>
-                    <xs:element minOccurs="0" name="return" type="tns:complexResponse"/>
+                    <xs:element minOccurs="0" name="ComplexResponse" type="tns:complexResponse"/>
                 </xs:sequence>
             </xs:complexType>
             <xs:complexType name="complexResponse">
@@ -39,22 +39,22 @@
             </xs:complexType>
             <xs:complexType name="complexMethod2">
                 <xs:sequence>
-                    <xs:element minOccurs="0" name="arg0" type="tns:complexRequest"/>
+                    <xs:element minOccurs="0" name="complexRequest" type="tns:complexRequest"/>
                 </xs:sequence>
             </xs:complexType>
             <xs:complexType name="complexMethod2Response">
                 <xs:sequence>
-                    <xs:element minOccurs="0" name="return" type="tns:complexResponse"/>
+                    <xs:element minOccurs="0" name="ComplexResponse" type="tns:complexResponse"/>
                 </xs:sequence>
             </xs:complexType>
             <xs:complexType name="complexMethod3">
                 <xs:sequence>
-                    <xs:element minOccurs="0" name="arg0" type="tns:complexRequest"/>
+                    <xs:element minOccurs="0" name="complexRequest" type="tns:complexRequest"/>
                 </xs:sequence>
             </xs:complexType>
             <xs:complexType name="complexMethod3Response">
                 <xs:sequence>
-                    <xs:element minOccurs="0" name="return" type="tns:complexResponse"/>
+                    <xs:element minOccurs="0" name="ComplexResponse" type="tns:complexResponse"/>
                 </xs:sequence>
             </xs:complexType>
         </xs:schema>
