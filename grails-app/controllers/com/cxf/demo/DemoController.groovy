@@ -21,11 +21,11 @@ class DemoController {
     SecureServicePortType customSecureServiceOutClient
     StockQuoteSoap stockQuoteClient
 
-    def index = {
+    def index() {
         render(view: "/index")
     }
 
-    def stockQuoteDemo = {
+    def stockQuoteDemo() {
         String stockQuote
         try {
             stockQuote = stockQuoteClient.getQuote("AAPL")
@@ -36,7 +36,7 @@ class DemoController {
         render(view: '/index', model: [stockQuote: stockQuote])
     }
 
-    def stockQuoteDemoJasper = {
+    def stockQuoteDemoJasper() {
         String stockQuote
         try {
             stockQuote = stockQuoteClient.getQuote("AAPL")
@@ -47,7 +47,7 @@ class DemoController {
         render model: [stockQuote: stockQuote]
     }
 
-    def insecureServiceDemo = {
+    def insecureServiceDemo() {
         def serviceException = null
         cxf.client.demo.simple.SimpleRequest request1 = new cxf.client.demo.simple.SimpleRequest(age: 32, name: "Christian")
         cxf.client.demo.secure.SimpleResponse response1 = new cxf.client.demo.secure.SimpleResponse()
@@ -60,7 +60,7 @@ class DemoController {
         render(view: '/index', model: [serviceException: serviceException, simpleRequest1: request1, simpleResponse1: response1])
     }
 
-    def customSecureServiceDemo = {
+    def customSecureServiceDemo() {
         def serviceException = null
         cxf.client.demo.simple.SimpleRequest request1 = new cxf.client.demo.simple.SimpleRequest(age: 32, name: "Christian")
         cxf.client.demo.secure.SimpleResponse response1 = new cxf.client.demo.secure.SimpleResponse()
@@ -73,7 +73,7 @@ class DemoController {
         render(view: '/index', model: [serviceException: serviceException, simpleRequest1: request1, simpleResponse1: response1])
     }
 
-    def customSecureServiceAuthorizationDemo = {
+    def customSecureServiceAuthorizationDemo() {
         def serviceException = null
         cxf.client.demo.authorization.SimpleResponse response1 = new cxf.client.demo.authorization.SimpleResponse()
         try {
@@ -85,7 +85,7 @@ class DemoController {
         render(view: '/index', model: [serviceException: serviceException, simpleRequest1: new SimpleRequest(), simpleResponse1: response1])
     }
 
-    def customSecureServiceOutDemo = {
+    def customSecureServiceOutDemo() {
         def serviceException = null
         cxf.client.demo.simple.SimpleRequest request1 = new cxf.client.demo.simple.SimpleRequest(age: 32, name: "Christian")
         cxf.client.demo.secure.SimpleResponse response1 = new cxf.client.demo.secure.SimpleResponse()
@@ -98,7 +98,7 @@ class DemoController {
         render(view: '/index', model: [serviceException: serviceException, simpleRequest1: request1, simpleResponse1: response1])
     }
 
-    def secureServiceDemo = {
+    def secureServiceDemo() {
         cxf.client.demo.simple.SimpleRequest request1 = new cxf.client.demo.simple.SimpleRequest(age: 32, name: "Christian")
         cxf.client.demo.secure.SimpleResponse response1 = secureServiceClient.secureMethod()
 
@@ -109,7 +109,7 @@ class DemoController {
      * I am using the full path for objects in controller since I have source for original objects here
      * which are named the same as the jaxb objects except the namespace.
      */
-    def simpleServiceDemo = {
+    def simpleServiceDemo() {
         cxf.client.demo.simple.SimpleRequest request1 = new cxf.client.demo.simple.SimpleRequest(age: 32, name: "Christian")
         cxf.client.demo.simple.SimpleResponse response1 = simpleServiceClient.simpleMethod1(request1)
 
@@ -121,7 +121,7 @@ class DemoController {
 
     }
 
-    def simpleServiceInterceptorDemo = {
+    def simpleServiceInterceptorDemo() {
         cxf.client.demo.simple.SimpleRequest request1 = new cxf.client.demo.simple.SimpleRequest(age: 32, name: "Christian")
         cxf.client.demo.simple.SimpleResponse response1 = simpleServiceInterceptorClient.simpleMethod1(request1)
 
@@ -138,7 +138,7 @@ class DemoController {
      * I am using the full path for objects in controller since I have source for original objects here
      * which are named the same as the jaxb objects except the namespace.
      */
-    def complexServiceDemo = {
+    def complexServiceDemo() {
         cxf.client.demo.complex.ComplexRequest request1 = new cxf.client.demo.complex.ComplexRequest(
                 singleChild: new cxf.client.demo.complex.ComplexChild(name: "Child"),
                 propagateCount: 3)
@@ -153,7 +153,7 @@ class DemoController {
         render(view: '/index', model: [complexRequest1: request1, complexResponse1: response1, complexRequest2: request2, complexResponse2: response2])
     }
 
-    def complexServiceFaultDemo = {
+    def complexServiceFaultDemo() {
         //this will cause a ComplexContrivedException_Exception
         cxf.client.demo.complex.ComplexRequest request1 = new cxf.client.demo.complex.ComplexRequest(
                 singleChild: new cxf.client.demo.complex.ComplexChild(name: "Child"),

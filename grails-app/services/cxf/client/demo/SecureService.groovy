@@ -1,12 +1,14 @@
 package cxf.client.demo
 
 import com.cxf.demo.SimpleResponse
-import com.cxf.demo.SimpleRequest
+import org.grails.cxf.utils.GrailsCxfEndpoint
 
+import javax.jws.WebMethod
+
+@GrailsCxfEndpoint
 class SecureService {
 
-    static expose = ['cxf']
-
+    @WebMethod
     SimpleResponse secureMethod() {
         println "in secure Method"
         new SimpleResponse(isOld: false, status: "Secure Service")

@@ -1,14 +1,17 @@
 package cxf.client.demo
 
-import com.cxf.demo.ComplexResponse
-import com.cxf.demo.ComplexRequest
 import com.cxf.demo.ComplexChild
+import com.cxf.demo.ComplexRequest
+import com.cxf.demo.ComplexResponse
 import com.cxf.demo.fault.ComplexContrivedException
+import org.grails.cxf.utils.GrailsCxfEndpoint
 
+import javax.jws.WebMethod
+
+@GrailsCxfEndpoint
 class ComplexService {
 
-    static expose = ['cxf']
-
+    @WebMethod
     ComplexResponse complexMethod1(ComplexRequest request) {
         ComplexResponse response = new ComplexResponse()
         response.children = []
@@ -20,6 +23,7 @@ class ComplexService {
         response
     }
 
+    @WebMethod
     ComplexResponse complexMethod2(ComplexRequest request) {
         ComplexResponse response = new ComplexResponse()
         response.children = []
@@ -34,6 +38,7 @@ class ComplexService {
         response
     }
 
+    @WebMethod
     ComplexResponse complexMethod3(ComplexRequest request) throws ComplexContrivedException {
         throw new ComplexContrivedException(contrivedMessage: "this is silly")
     }

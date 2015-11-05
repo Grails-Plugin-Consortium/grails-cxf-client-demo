@@ -1,42 +1,38 @@
-
-<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="AuthorizationService" targetNamespace="http://demo.client.cxf/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://demo.client.cxf/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="AuthorizationServiceService" targetNamespace="http://demo.client.cxf/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://demo.client.cxf/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
     <wsdl:types>
-        <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://demo.client.cxf/" xmlns="http://demo.client.cxf/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:schema elementFormDefault="unqualified" targetNamespace="http://demo.client.cxf/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:element name="secureMethod" type="tns:secureMethod"/>
+            <xs:element name="secureMethodResponse" type="tns:secureMethodResponse"/>
+            <xs:complexType name="secureMethod">
+                <xs:sequence/>
+            </xs:complexType>
+            <xs:complexType name="secureMethodResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="return" type="tns:simpleResponse"/>
+                </xs:sequence>
+            </xs:complexType>
             <xs:complexType name="simpleResponse">
                 <xs:sequence>
                     <xs:element minOccurs="0" name="isOld" type="xs:boolean"/>
                     <xs:element minOccurs="0" name="status" type="xs:string"/>
                 </xs:sequence>
             </xs:complexType>
-            <xs:element name="secureMethod" type="secureMethod"/>
-            <xs:complexType name="secureMethod">
-                <xs:sequence/>
-            </xs:complexType>
-            <xs:element name="secureMethodResponse" type="secureMethodResponse"/>
-            <xs:complexType name="secureMethodResponse">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="return" type="simpleResponse"/>
-                </xs:sequence>
-            </xs:complexType>
         </xs:schema>
     </wsdl:types>
     <wsdl:message name="secureMethod">
-        <wsdl:part element="tns:secureMethod" name="parameters">
-        </wsdl:part>
+        <wsdl:part element="tns:secureMethod" name="parameters"/>
     </wsdl:message>
     <wsdl:message name="secureMethodResponse">
-        <wsdl:part element="tns:secureMethodResponse" name="parameters">
-        </wsdl:part>
+        <wsdl:part element="tns:secureMethodResponse" name="parameters"/>
     </wsdl:message>
-    <wsdl:portType name="AuthorizationServicePortType">
+    <wsdl:portType name="AuthorizationService">
         <wsdl:operation name="secureMethod">
-            <wsdl:input message="tns:secureMethod" name="secureMethod">
-            </wsdl:input>
-            <wsdl:output message="tns:secureMethodResponse" name="secureMethodResponse">
-            </wsdl:output>
+            <wsdl:input message="tns:secureMethod" name="secureMethod"/>
+            <wsdl:output message="tns:secureMethodResponse" name="secureMethodResponse"/>
         </wsdl:operation>
     </wsdl:portType>
-    <wsdl:binding name="AuthorizationServiceSoapBinding" type="tns:AuthorizationServicePortType">
+    <wsdl:binding name="AuthorizationServiceServiceSoapBinding" type="tns:AuthorizationService">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
         <wsdl:operation name="secureMethod">
             <soap:operation soapAction="" style="document"/>
@@ -48,9 +44,9 @@
             </wsdl:output>
         </wsdl:operation>
     </wsdl:binding>
-    <wsdl:service name="AuthorizationService">
-        <wsdl:port binding="tns:AuthorizationServiceSoapBinding" name="AuthorizationServicePort">
-            <soap:address location="http://localhost:9090/cxf-client-demo/services/authorization"/>
+    <wsdl:service name="AuthorizationServiceService">
+        <wsdl:port binding="tns:AuthorizationServiceServiceSoapBinding" name="AuthorizationServicePort">
+            <soap:address location="http://localhost:8080/services/authorization"/>
         </wsdl:port>
     </wsdl:service>
 </wsdl:definitions>
