@@ -3,13 +3,12 @@ import com.cxf.demo.logging.CustomLoggingInInterceptor
 import com.cxf.demo.logging.CustomLoggingOutInterceptor
 import com.cxf.demo.logging.VerboseCustomLoggingInInterceptor
 import com.cxf.demo.security.CustomSecurityInterceptor
-import com.grails.cxf.client.security.DefaultSecurityOutInterceptor
+import org.grails.cxf.client.security.DefaultSecurityOutInterceptor
 import org.apache.cxf.configuration.security.AuthorizationPolicy
 import org.apache.cxf.transports.http.configuration.HTTPClientPolicy
 
 // Place your Spring DSL code here
 beans = {
-
 
 	myCustomInterceptor(CustomSecurityInterceptor)
 
