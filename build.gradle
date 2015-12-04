@@ -62,8 +62,10 @@ dependencies {
     compile "org.grails.plugins:hibernate"
     compile "org.grails.plugins:cache"
     compile "org.hibernate:hibernate-ehcache"
+    //This is required 2.5+ due to CXF 3.
+    compile "net.sf.ehcache:ehcache-core:2.6.11"
     compile "org.grails.plugins:scaffolding"
-    compile 'org.grails.plugins:grails-cxf:3.0.5'
+    compile 'org.grails.plugins:grails-cxf:3.0.7'
     compile 'org.grails.plugins:grails-cxf-client:3.0.0-SNAPSHOT'
 
     runtime "org.grails.plugins:asset-pipeline"

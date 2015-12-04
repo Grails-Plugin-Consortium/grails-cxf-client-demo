@@ -1,28 +1,21 @@
-import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorMarshal
-import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorPostLogical
-import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorPostProtocol
-import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorPostStream
-import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorPreLogical
-import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorPreProtocol
-import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorPreStream
-import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorPrepareSend
-import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorSend
-import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorSetup
-import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorUserLogical
-import com.cxf.demo.fault.out.interceptor.CustomFaultOutInterceptorWrite
+import com.cxf.demo.fault.out.interceptor.*
 import com.cxf.demo.logging.CustomLoggingInInterceptor
 import com.cxf.demo.logging.CustomLoggingOutInterceptor
 import com.cxf.demo.logging.VerboseCustomLoggingInInterceptor
 import com.cxf.demo.security.CustomSecurityInterceptor
+import com.grails.cxf.client.security.DefaultSecurityOutInterceptor
 import org.apache.cxf.configuration.security.AuthorizationPolicy
 import org.apache.cxf.transports.http.configuration.HTTPClientPolicy
 
 // Place your Spring DSL code here
 beans = {
 
-	myCustomInterceptor(CustomSecurityInterceptor) {
-		user = "wsuser"
-		pass = "secret"
+
+	myCustomInterceptor(CustomSecurityInterceptor)
+
+	myCustomerSecurityOutInterceptor(DefaultSecurityOutInterceptor){
+		username = 'wsuser'
+		password = 'password'
 	}
 
 	customLoggingInInterceptor(CustomLoggingInInterceptor) {
@@ -52,13 +45,13 @@ beans = {
 		name = "customLoggingOutInterceptor"
 	}
 
-	customHttpClientPolicy(HTTPClientPolicy){
+	customHttpClientPolicy(HTTPClientPolicy) {
 		connectionTimeout = 30000
 		receiveTimeout = 60000
 		allowChunking = false
 	}
 
-	customAuthorizationPolicy(AuthorizationPolicy){
+	customAuthorizationPolicy(AuthorizationPolicy) {
 		userName = 'wsuser'
 		password = 'secret'
 		authorizationType = 'Basic'

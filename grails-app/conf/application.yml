@@ -41,14 +41,14 @@ cxf:
             namespace: cxf.client.demo.secure
             clientInterface: cxf.client.demo.secure.SecureServicePortType
             secured: true
-            securityInterceptor: myCustomInterceptor
+            securityInterceptor: myCustomerSecurityOutInterceptor
             serviceEndpointAddress: http://localhost:8080/services/secure
         customSecureServiceOutClient:
             wsdl: docs/SecureService.wsdl #only used for wsdl2java script target
             namespace: cxf.client.demo.secure
             clientInterface: cxf.client.demo.secure.SecureServicePortType
             secured: true
-            securityInterceptor: myCustomInterceptor
+            securityInterceptor: myCustomerSecurityOutInterceptor
             outInterceptors: customLoggingOutInterceptor #can use single item, comma separated list or groovy list
             inInterceptors:
               - customLoggingInInterceptor
@@ -61,7 +61,7 @@ cxf:
             clientInterface: cxf.client.demo.secure.SecureServicePortType
             secured: true
             username: wsuser
-            password: secret
+            password: password
             serviceEndpointAddress: http://localhost:8080/services/secure
         stockQuoteClient:
             wsdl: http://www.webservicex.net/stockquote.asmx?WSDL
