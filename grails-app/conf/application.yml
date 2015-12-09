@@ -18,7 +18,8 @@ cxf:
             wsdl: docs/SimpleService.wsdl #only used for wsdl2java script target
             clientInterface: cxf.client.demo.simple.SimpleServicePortType
             serviceEndpointAddress: http://localhost:8080/services/simple
-            outInterceptors: customLoggingOutInterceptor
+            outInterceptors:
+              - customLoggingOutInterceptor
             inInterceptors:
               - customLoggingInInterceptor
               - verboseLoggingInInterceptor
