@@ -15,20 +15,20 @@ import java.util.logging.Logger
 @NoJSR250Annotations
 public class CustomLoggingOutInterceptor extends AbstractLoggingInterceptor {
 
-    private static final Logger LOG = LogUtils.getLogger(CustomLoggingOutInterceptor)
-    def name
+	private static final Logger LOG = LogUtils.getLogger(CustomLoggingOutInterceptor)
+	def name
 
-    public CustomLoggingOutInterceptor() {
-        super(Phase.WRITE);
-        log LOG, "Creating the custom interceptor bean"
-    }
+	public CustomLoggingOutInterceptor() {
+		super(Phase.WRITE);
+		log LOG, "Creating the custom interceptor bean"
+	}
 
-    public void handleMessage(Message message) throws Fault {
-        log LOG, "$name :: I AM IN CUSTOM OUT LOGGER!!!!!!!"
-    }
+	public void handleMessage(Message message) throws Fault {
+		log LOG, "$name :: I AM IN CUSTOM OUT LOGGER!!!!!!!"
+	}
 
-    @Override
-    protected Logger getLogger() {
-        LOG
-    }
+	@Override
+	protected Logger getLogger() {
+		LOG
+	}
 }
