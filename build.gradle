@@ -5,12 +5,13 @@ buildscript {
     repositories {
         mavenLocal()
         maven { url "https://repo.grails.org/grails/core" }
+        maven { url "https://dl.bintray.com/ctoestreich/grails-plugins" }
     }
     dependencies {        
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
         classpath 'com.bertramlabs.plugins:asset-pipeline-gradle:2.5.0'
         classpath "org.grails.plugins:hibernate:4.3.10.5"
-        classpath "org.grails.plugins:grails-cxf-client:3.0.0-SNAPSHOT"
+        classpath "org.grails.plugins:grails-cxf-client:3.0.3"
     }
 }
 
@@ -42,6 +43,7 @@ assets {
 repositories {
     mavenLocal()
     maven { url "https://repo.grails.org/grails/core" }
+    maven { url "https://dl.bintray.com/ctoestreich/grails-plugins" }
 }
 
 dependencyManagement {
@@ -65,7 +67,7 @@ dependencies {
     //This is required 2.5+ due to CXF 3.
     compile "net.sf.ehcache:ehcache-core:2.6.11"
     compile "org.grails.plugins:scaffolding"
-    compile 'org.grails.plugins:grails-cxf:3.0.7'
+    compile 'org.grails.plugins:grails-cxf:3.0.9'
     compile 'org.grails.plugins:grails-cxf-client:3.0.3'
 
     runtime "org.grails.plugins:asset-pipeline"
