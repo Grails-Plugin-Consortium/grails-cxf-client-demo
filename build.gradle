@@ -67,8 +67,8 @@ dependencies {
     //This is required 2.5+ due to CXF 3.
     compile "net.sf.ehcache:ehcache-core:2.6.11"
     compile "org.grails.plugins:scaffolding"
-    compile 'org.grails.plugins:grails-cxf:3.0.9'
-    compile 'org.grails.plugins:grails-cxf-client:3.0.3'
+    compile 'org.grails.plugins:cxf:3.0.13'
+    compile 'org.grails.plugins:cxf-client:3.0.6'
 
     runtime "org.grails.plugins:asset-pipeline"
 
