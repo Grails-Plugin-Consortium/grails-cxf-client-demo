@@ -11,7 +11,7 @@ buildscript {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
         classpath 'com.bertramlabs.plugins:asset-pipeline-gradle:2.5.0'
         classpath "org.grails.plugins:hibernate:4.3.10.5"
-        classpath "org.grails.plugins:grails-cxf-client:3.0.3"
+        classpath "org.grails.plugins:cxf-client:3.0.6"
     }
 }
 
@@ -68,7 +68,7 @@ dependencies {
     compile "net.sf.ehcache:ehcache-core:2.6.11"
     compile "org.grails.plugins:scaffolding"
     compile 'org.grails.plugins:cxf:3.0.13'
-    compile 'org.grails.plugins:cxf-client:3.0.6'
+    compile 'org.grails.plugins:cxf-client:3.0.7'
 
     runtime "org.grails.plugins:asset-pipeline"
 

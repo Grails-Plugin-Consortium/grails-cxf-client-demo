@@ -10,3 +10,4 @@ build/
 .settings
 .classpath
 .asscache
+src/main/java/net/webservicex/*.*

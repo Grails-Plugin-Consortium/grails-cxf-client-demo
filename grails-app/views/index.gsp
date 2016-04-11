@@ -1,4 +1,3 @@
-<%@ page import="cxf.client.demo.complex.ComplexContrivedException_Exception" %>
 <html>
 <head>
     <title>CXF CLIENT DEMO</title>
@@ -23,8 +22,8 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <g:form action="stockQuoteDemo" controller="demo" name="stockQuoteDemo">
-                    <h5>Invoke Stock Quote Service</h5>
+                <g:form action="icd9" controller="demo" name="icd9Demo">
+                    <h5>Invoke ICD9 Service</h5>
 
                     <div style="width:100%"><g:submitButton name="submitButton" value="Invoke"/></div>
 
@@ -37,9 +36,9 @@
         <div class="row">
             <div class="col-xs-12">
                 <h5>Service Results</h5>
-                <g:if test="${stockQuote}">
+                <g:if test="${icd9}">
                     <BR><BR>
-                    <span class="name">${stockQuote?.encodeAsHTML()?.replace("&gt;", "&gt;<br>")}</span><BR>
+                    <span class="name">${icd9?.replace("&gt;", "&gt;<br>")}</span><BR>
                 </g:if>
             </div>
         </div>

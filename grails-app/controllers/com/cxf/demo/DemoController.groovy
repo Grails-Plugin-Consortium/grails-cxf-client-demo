@@ -1,21 +1,23 @@
 package com.cxf.demo
 
+import net.webservicex.ICD9Soap
+
 class DemoController {
 
-    def stockQuoteClient
+    ICD9Soap icd9Client
 
     def index() {
         render(view: "/index")
     }
 
-    def stockQuoteDemo() {
-        String stockQuote = ""
+    def icd9() {
+        String icd9 = ""
         try {
-            stockQuote = stockQuoteClient.getQuote("AAPL")
+            icd9 = icd9Client.getICD9ByDescription("Neoplasms")
         } catch (Exception e) {
-            stockQuote = e.message
+            icd9 = e.message
         }
 
-        render(view: '/index', model: [stockQuote: stockQuote])
+        render(view: '/index', model: [icd9: icd9])
     }
 }
