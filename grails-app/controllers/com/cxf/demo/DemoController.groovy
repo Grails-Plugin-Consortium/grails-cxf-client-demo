@@ -4,7 +4,7 @@ import net.webservicex.ICD9Soap
 
 class DemoController {
 
-    ICD9Soap icd9Client
+    def icd9Client
 
     def index() {
         render(view: "/index")
