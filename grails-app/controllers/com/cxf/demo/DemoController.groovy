@@ -9,7 +9,7 @@ class DemoController {
     }
 
     def stockQuoteDemo() {
-        String stockQuote
+        String stockQuote = ""
         try {
             stockQuote = stockQuoteClient.getQuote("AAPL")
         } catch (Exception e) {
