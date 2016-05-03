@@ -1,7 +1,5 @@
 package com.cxf.demo
 
-import net.webservicex.ICD9Soap
-
 class DemoController {
 
     def icd9Client
