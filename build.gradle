@@ -11,7 +11,7 @@ buildscript {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
         classpath 'com.bertramlabs.plugins:asset-pipeline-gradle:2.5.0'
         classpath "org.grails.plugins:hibernate:4.3.10.5"
-        classpath "org.grails.plugins:cxf-client:3.0.6"
+        classpath "org.grails.plugins:cxf-client:3.0.7"
     }
 }
 
@@ -19,7 +19,7 @@ plugins {
     id "io.spring.dependency-management" version "0.5.2.RELEASE"
 }
 
-version "0.1"
+version "1.0"
 group "org.grails.cxf.client.demo"
 
 apply plugin: "spring-boot"
