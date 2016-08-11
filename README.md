@@ -3,7 +3,7 @@ Client Demo (No CXF Services)
 
 Step 1
 -----
-Run `wsdlTojava` gradle target to generate java classes
+Run `wsdlToJava` gradle target to generate java classes
 
 Step 2
 ------
