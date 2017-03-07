@@ -12,3 +12,6 @@ build/
 .asscache
 #src/main/java/net/webservicex/*.*
 *.db
+#src/main/java/
+src/main/webapp/
+src/test/
