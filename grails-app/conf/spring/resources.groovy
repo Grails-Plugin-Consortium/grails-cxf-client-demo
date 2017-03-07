@@ -10,49 +10,49 @@ import org.grails.cxf.client.security.DefaultSecurityOutInterceptor
 // Place your Spring DSL code here
 beans = {
 
-	myCustomInterceptor(CustomSecurityInterceptor)
-
-	myCustomerSecurityOutInterceptor(DefaultSecurityOutInterceptor) {
-		username = 'wsuser'
-		password = 'password'
-	}
-
-	customLoggingInInterceptor(CustomLoggingInInterceptor) {
-		name = "customLoggingInInterceptor"
-	}
-
-	customFaultOutInterceptorSetup(CustomFaultOutInterceptorSetup)
-	customFaultOutInterceptorPreLogical(CustomFaultOutInterceptorPreLogical)
-	customFaultOutInterceptorUserLogical(CustomFaultOutInterceptorUserLogical)
-	customFaultOutInterceptorPostLogical(CustomFaultOutInterceptorPostLogical)
-	customFaultOutInterceptorPrepareSend(CustomFaultOutInterceptorPrepareSend)
-	customFaultOutInterceptorPreStream(CustomFaultOutInterceptorPreStream)
-	customFaultOutInterceptorPreProtocol(CustomFaultOutInterceptorPreProtocol)
-	customFaultOutInterceptorWrite(CustomFaultOutInterceptorWrite)
-	customFaultOutInterceptorMarshal(CustomFaultOutInterceptorMarshal)
-	customFaultOutInterceptorPreProtocol(CustomFaultOutInterceptorPreProtocol)
-	customFaultOutInterceptorPostProtocol(CustomFaultOutInterceptorPostProtocol)
-	customFaultOutInterceptorPreStream(CustomFaultOutInterceptorPreStream)
-	customFaultOutInterceptorPostStream(CustomFaultOutInterceptorPostStream)
-	customFaultOutInterceptorSend(CustomFaultOutInterceptorSend)
-
-	verboseLoggingInInterceptor(VerboseCustomLoggingInInterceptor) {
-		name = "verboseLoggingInInterceptor"
-	}
-
-	customLoggingOutInterceptor(CustomLoggingOutInterceptor) {
-		name = "customLoggingOutInterceptor"
-	}
-
-	customHttpClientPolicy(HTTPClientPolicy) {
-		connectionTimeout = 30000
-		receiveTimeout = 60000
-		allowChunking = false
-	}
-
-	customAuthorizationPolicy(AuthorizationPolicy) {
-		userName = 'wsuser'
-		password = 'secret'
-		authorizationType = 'Basic'
-	}
+//	myCustomInterceptor(CustomSecurityInterceptor)
+//
+//	myCustomerSecurityOutInterceptor(DefaultSecurityOutInterceptor) {
+//		username = 'wsuser'
+//		password = 'password'
+//	}
+//
+//	customLoggingInInterceptor(CustomLoggingInInterceptor) {
+//		name = "customLoggingInInterceptor"
+//	}
+//
+//	customFaultOutInterceptorSetup(CustomFaultOutInterceptorSetup)
+//	customFaultOutInterceptorPreLogical(CustomFaultOutInterceptorPreLogical)
+//	customFaultOutInterceptorUserLogical(CustomFaultOutInterceptorUserLogical)
+//	customFaultOutInterceptorPostLogical(CustomFaultOutInterceptorPostLogical)
+//	customFaultOutInterceptorPrepareSend(CustomFaultOutInterceptorPrepareSend)
+//	customFaultOutInterceptorPreStream(CustomFaultOutInterceptorPreStream)
+//	customFaultOutInterceptorPreProtocol(CustomFaultOutInterceptorPreProtocol)
+//	customFaultOutInterceptorWrite(CustomFaultOutInterceptorWrite)
+//	customFaultOutInterceptorMarshal(CustomFaultOutInterceptorMarshal)
+//	customFaultOutInterceptorPreProtocol(CustomFaultOutInterceptorPreProtocol)
+//	customFaultOutInterceptorPostProtocol(CustomFaultOutInterceptorPostProtocol)
+//	customFaultOutInterceptorPreStream(CustomFaultOutInterceptorPreStream)
+//	customFaultOutInterceptorPostStream(CustomFaultOutInterceptorPostStream)
+//	customFaultOutInterceptorSend(CustomFaultOutInterceptorSend)
+//
+//	verboseLoggingInInterceptor(VerboseCustomLoggingInInterceptor) {
+//		name = "verboseLoggingInInterceptor"
+//	}
+//
+//	customLoggingOutInterceptor(CustomLoggingOutInterceptor) {
+//		name = "customLoggingOutInterceptor"
+//	}
+//
+//	customHttpClientPolicy(HTTPClientPolicy) {
+//		connectionTimeout = 30000
+//		receiveTimeout = 60000
+//		allowChunking = false
+//	}
+//
+//	customAuthorizationPolicy(AuthorizationPolicy) {
+//		userName = 'wsuser'
+//		password = 'secret'
+//		authorizationType = 'Basic'
+//	}
 }

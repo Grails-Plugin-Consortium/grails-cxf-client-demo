@@ -7,6 +7,13 @@ cxf:
             serviceEndpointAddress: http://www.webservicex.net/icd9.asmx
             receiveTimeout: 120000 #2min
             connectionTimeout: 120000 #2min
+        localClient:
+            wsdl: http://localhost:8080/services/sample?wsdl
+            clientInterface: com.cxf.demo.sample.client.SampleService
+            namespace: com.cxf.demo.sample.client
+            serviceEndpointAddress: http://localhost:8080/services/sample
+            receiveTimeout: 120000 #2min
+            connectionTimeout: 120000 #2min
 
 ---
 grails:

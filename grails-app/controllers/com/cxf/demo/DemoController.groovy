@@ -1,8 +1,11 @@
 package com.cxf.demo
 
+import net.webservicex.ICD9Soap
+
 class DemoController {
 
-    def icd9Client
+    ICD9Soap icd9Client
+    com.cxf.demo.sample.client.SampleService localClient
 
     def index() {
         render(view: "/index")
@@ -17,5 +20,16 @@ class DemoController {
         }
 
         render(view: '/index', model: [icd9: icd9])
+    }
+
+    def local() {
+        String data = ""
+        try {
+            data = localClient.serviceMethod()
+        } catch (Exception e) {
+            data = e.message
+        }
+
+        render(view: '/index', model: [icd9: data])
     }
 }

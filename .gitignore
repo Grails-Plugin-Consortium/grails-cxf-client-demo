@@ -10,5 +10,5 @@ build/
 .settings
 .classpath
 .asscache
-src/main/java/net/webservicex/*.*
+#src/main/java/net/webservicex/*.*
 *.db
