@@ -7,13 +7,6 @@ cxf:
             serviceEndpointAddress: http://www.webservicex.net/icd9.asmx
             receiveTimeout: 120000 #2min
             connectionTimeout: 120000 #2min
-        icd9ClientInvalid:
-            wsdl: http://www.webservicex.net/icd9_doesnotexist.asmx?WSDL    # This will cause WSDLRuntimeException
-            clientInterface: net.webservicex.ICD9SoapInvalid
-            namespace: com.foo.bar
-            serviceEndpointAddress: http://www.webservicex.net/icd9.asmx
-            receiveTimeout: 120000 #2min
-            connectionTimeout: 120000 #2min
 
 ---
 grails:
